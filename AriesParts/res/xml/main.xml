@@ -71,4 +71,13 @@
                 android:summary="@string/volume_boost_summary_head" />
 	</PreferenceCategory>
 
+        <PreferenceCategory
+            android:title="@string/category_vibration_title">
+            <!-- Vibration -->
+            <com.cyanogenmod.settings.device.VibrationPreference
+                android:key="vibration"
+                android:title="@string/vibration_title_head"
+                android:summary="@string/vibration_summary_head" />
+         </PreferenceCategory>
+
 </PreferenceScreen>

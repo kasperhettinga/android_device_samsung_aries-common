@@ -23,6 +23,7 @@ public class DeviceSettings extends PreferenceActivity  {
     public static final String KEY_TVOUT_SYSTEM = "tvout_system";
     public static final String KEY_VOLUME_BOOST = "volume_boost";
     public static final String KEY_VOLUME_CATEGORY = "category_volume_boost";
+    public static final String KEY_VIBRATION = "vibration";
 
     private ColorTuningPreference mColorTuning;
     private ListPreference mMdnie;
@@ -32,6 +33,7 @@ public class DeviceSettings extends PreferenceActivity  {
     private ListPreference mTvOutSystem;
     private TvOut mTvOut;
     private VolumeBoostPreference mVolumeBoost;
+    private VibrationPreference mVibration;
 
     private BroadcastReceiver mHeadsetReceiver = new BroadcastReceiver() {
 
@@ -74,6 +76,9 @@ public class DeviceSettings extends PreferenceActivity  {
             category.removePreference(mVolumeBoost);
             getPreferenceScreen().removePreference(category);
         }
+
+        mVibration = (VibrationPreference) findPreference(KEY_VIBRATION);
+        mVibration.setEnabled(VibrationPreference.isSupported());
 
         mTvOut = new TvOut();
         mTvOutEnable = (CheckBoxPreference) findPreference(KEY_TVOUT_ENABLE);
