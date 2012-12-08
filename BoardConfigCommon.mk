@@ -42,6 +42,9 @@ BOARD_UMS_LUNFILE := /sys/class/android_usb/android0/f_mass_storage/lun/file
 # Kernel Source
 TARGET_KERNEL_SOURCE := kernel/samsung/aries
 
+# Build kernel using Linaro 4.7 toolchain
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := linaro-4.7
+
 # Releasetools
 TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./device/samsung/aries-common/releasetools/aries_ota_from_target_files
 TARGET_RELEASETOOL_IMG_FROM_TARGET_SCRIPT := ./device/samsung/aries-common/releasetools/aries_img_from_target_files
