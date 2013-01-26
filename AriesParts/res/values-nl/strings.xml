@@ -56,6 +56,14 @@
     <string name="vibration_title">Trilintensiteit</string>
     <string name="vibration_test_title">Test</string>
 
+    <string name="category_mackay_title">Mackay kernel instellingen</string>
+    <string name="wifi_speed_head">Wi-Fi modus in slaapstand</string>
+    <string name="wifi_speed_on">Snel</string>
+    <string name="wifi_speed_off">Energiebesparend</string>
+    <string name="fast_charge_head">Snelladen</string>
+    <string name="fast_charge_on">Snelladen ingeschakeld</string>
+    <string name="fast_charge_off">Snelladen uitgeschakeld</string>
+
     <!-- Used for activity title. Usually not visible, except on the
          multi-task screen -->
     <string name="generic_warning_title">Let op</string>
