@@ -14,7 +14,9 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">Geavanceerde instellingen</string>
+    <string name="app_name">Mackay-instellingen</string>
+    <string name="mackay_settings_title">Mackay kernel instellingen</string>
+    <string name="mackay_settings_summary">In deze app kun je de instellingen van de Mackay kernel aanpassen. Gebruik op eigen risico\n\nAls je een andere kernel gebruikt zijn deze instellingen mogelijk niet functioneel of zorgen ze voor geforceerd afsluiten.</string>
     <string name="category_screen_title">Scherm</string>
     <string name="color_tuning_title_head">Kleuren regelen</string>
     <string name="color_tuning_summary_head">Schermkleur kalibreren</string>
@@ -63,8 +65,29 @@
     <string name="vibration_title">Trilintensiteit</string>
     <string name="vibration_test_title">Testen</string>
     <string name="button_reset_title">Herstellen</string>
+    <string name="category_wifi_title">WiFi energiemodus</string>
+    <string name="wifi_speed_head">Modus bij scherm uit</string>
+    <string name="wifi_speed_on">Snel</string>
+    <string name="wifi_speed_off">Energiebesparend</string>
+    <string name="category_charge_title">Snelladen</string>
+    <string name="fast_charge_head">Snelladen op USB</string>
+    <string name="fast_charge_on">Ingeschakeld</string>
+    <string name="fast_charge_off">Uitgeschakeld</string>
+    <string name="category_blx_preference_title">Acculevensduurverlenger (BLX)</string>
+    <string name="blx_title_head">Oplaadlimiet</string>
+    <string name="blx_summary_head">Stel oplaadlimiet in, wat mogelijk de levensduur van de accu verlengt</string>
+    <string name="blx_title">BLX - oplaadlimiet</string>
+    <string name="category_performance_title">Prestaties</string>
+    <string name="processor_settings_title">Processor</string>
+    <string name="processor_settings_summary">Wijzig governor en min/max frequentie</string>
+    <string name="scheduler_settings_title">Scheduler</string>
+    <string name="scheduler_settings_summary">Wijzig in/output scheduler</string>
     <string name="generic_warning_title">Let op</string>
     <string name="imei_not_sane_title">Let op</string>
     <string name="imei_not_sane_message">Er is een probleem gevonden met uw telefoon. Het IMEI-nummer van uw telefoon is ongeldig. Hierdoor kunnen problemen optreden met uw mobiele netwerkverbinding, inclusief het niet kunnen bellen van het alarmnummer.</string>
     <string name="imei_not_sane_ok">OK</string>
+    <string name="category_apply_settings">Instelling automatisch toepassen na opstarten</string>
+    <string name="apply_title">Instellingen toepassen</string>
+    <string name="apply_summary_on">Instellingen worden automatisch toegepast</string>
+    <string name="apply_summary_off">Instellingen worden niet automatisch toegepast</string>
 </resources>
