@@ -70,6 +70,30 @@
     <string name="vibration_title">Vibration intensity</string>
     <string name="vibration_test_title">Test</string>
 
+    <string name="mackay_settings_title">Mackay kernel settings</string>
+    <string name="mackay_settings_summary">Below, you can change the settings for the Mackay kernel. Use at your own risk\n\nIf you run another kernel, these settings may be nonfunctional or cause force closes.</string>
+
+    <string name="category_wifi_title">WiFi power mode</string>
+    <string name="wifi_speed_head">Screen off power mode</string>
+    <string name="wifi_speed_on">Fast</string>
+    <string name="wifi_speed_off">Energy-saving</string>
+
+    <string name="category_charge_title">Fast charge</string>
+    <string name="fast_charge_head">Fast charging on USB</string>
+    <string name="fast_charge_on">Enable</string>
+    <string name="fast_charge_off">Disabled</string>
+
+    <string name="category_blx_preference_title">Battery life extender (BLX)</string>
+    <string name="blx_title_head">Charging limit</string>
+    <string name="blx_summary_head">Set charging limit, potentially increasing battery life</string>
+    <string name="blx_title">BLX - charging limit</string>
+
+    <string name="category_performance_title">Performance</string>
+    <string name="processor_settings_title">CPU setting</string>
+    <string name="processor_settings_summary">Change governor and min/max frequencies</string>
+    <string name="scheduler_settings_title">Scheduler</string>
+    <string name="scheduler_settings_summary">Chage in/output scheduler</string>
+
     <string name="button_reset_title">Reset</string>
 
     <!-- Used for activity title. Usually not visible, except on the
