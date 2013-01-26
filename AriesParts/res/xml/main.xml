@@ -108,6 +108,13 @@
 			android:summaryOn="@string/wifi_speed_on"
 			android:summaryOff="@string/wifi_speed_off"
                 android:persistent="true" />
+		<CheckBoxPreference
+			android:key="fast_charrge"
+			android:title="@string/fast_charge_head"
+			android:summaryOn="@string/fast_charge_on"
+			android:summaryOff="@string/fast_charge_off"
+                android:persistent="true" />
+
 	</PreferenceCategory>
 
 </PreferenceScreen>

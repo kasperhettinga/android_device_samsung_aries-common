@@ -12,15 +12,21 @@ public class Mackay implements OnPreferenceChangeListener {
     /**
      * Set location of sysfs parameter
      */
-    private static final String FILE_PATH = "sys/module/bcmdhd/parameters/wifi_speed";
+    private static final String[] FILE_PATH = new String[] {
+        "/sys/module/bcmdhd/parameters/wifi_speed",
+        "/sys/kernel/fast_charge/force_fast_charge"
+    };
 
     /**
      * Check whether the kernel supports this specific sysfs parameter
      */
     public static boolean isSupported() {
         boolean supported = true;
-        if (!Utils.fileExists(FILE_PATH)) {
-            supported = false;
+
+        for (int i = 0; i < FILE_PATH.length; i++) {
+            if (!Utils.fileExists(FILE_PATH[i])) {
+                supported = false;
+            }
         }
         return supported;
     }
@@ -34,9 +40,15 @@ public class Mackay implements OnPreferenceChangeListener {
         }
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-        int value = sharedPrefs.getBoolean(DeviceSettings.KEY_WIFI_SPEED, false) ? 1 : 0;
-        Utils.writeValue(FILE_PATH, String.valueOf(value));
+        int value;
+        for (int i = 0; i < FILE_PATH.length; i++) {
+            if (i == 0)
+                value = sharedPrefs.getBoolean(DeviceSettings.KEY_WIFI_SPEED, false) ? 1 : 0;
+            else
+                value = sharedPrefs.getBoolean(DeviceSettings.KEY_FAST_CHARGE, false) ? 1 : 0;
 
+            Utils.writeValue(FILE_PATH[i], String.valueOf(value));
+        }
     }
 
     /**
@@ -44,7 +56,9 @@ public class Mackay implements OnPreferenceChangeListener {
      */
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        Utils.writeValue(FILE_PATH, ((CheckBoxPreference)preference).isChecked() ? "0" : "1");
+        for (int i = 0; i < FILE_PATH.length; i++) {
+            Utils.writeValue(FILE_PATH[i], ((CheckBoxPreference)preference).isChecked() ? "0" : "1");
+        }
         return true;
     }
 

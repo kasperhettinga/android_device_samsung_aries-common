@@ -60,6 +60,9 @@
     <string name="wifi_speed_head">WiFi mode when screen off</string>
     <string name="wifi_speed_on">Fast</string>
     <string name="wifi_speed_off">Energy-saving</string>
+    <string name="fast_charge_head">Fast charge</string>
+    <string name="fast_charge_on">Fast charge enabled</string>
+    <string name="fast_charge_off">Fast charge disabled</string>
 
     <string name="button_reset_title">Reset</string>
 
