@@ -2,6 +2,16 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
 	<PreferenceCategory
+                android:title="@string/mackay_settings_title"
+                android:key="category_mackay">
+                <PreferenceScreen
+                android:key="processor_settings"
+                android:title="@string/mackay_settings_title"
+                android:summary="@string/mackay_settings_summary">
+                </PreferenceScreen>
+	</PreferenceCategory>
+
+	<PreferenceCategory
     	android:title="@string/category_screen_title">
 	    <!-- Color tuning -->
 	    <com.cyanogenmod.settings.device.ColorTuningPreference 
@@ -98,5 +108,61 @@
                 android:title="@string/vibration_title_head"
                 android:summary="@string/vibration_summary_head" />
          </PreferenceCategory>
+
+	<PreferenceCategory
+                android:title="@string/category_wifi_title"
+                android:key="category_wifi">
+		<CheckBoxPreference
+			android:key="wifi_speed"
+			android:title="@string/wifi_speed_head"
+			android:summaryOn="@string/wifi_speed_on"
+			android:summaryOff="@string/wifi_speed_off"
+                android:persistent="true" />
+	</PreferenceCategory>
+
+	<PreferenceCategory
+                android:title="@string/category_charge_title"
+                android:key="category_charge">
+		<CheckBoxPreference
+			android:key="fast_charge"
+			android:title="@string/fast_charge_head"
+			android:summaryOn="@string/fast_charge_on"
+			android:summaryOff="@string/fast_charge_off"
+                android:persistent="true" />
+	</PreferenceCategory>
+
+	<PreferenceCategory
+                android:title="@string/category_blx_preference_title"
+                android:key="category_blx_preference">
+	        <com.cyanogenmod.settings.device.BLXPreference 
+	                android:key="blx"
+	                android:title="@string/blx_title_head"
+	                android:summary="@string/blx_summary_head" />
+	</PreferenceCategory>
+
+	<PreferenceCategory
+                android:title="@string/category_performance_title"
+                android:key="category_performance">
+                <!-- Processor Settings -->
+                <PreferenceScreen
+                android:key="processor_settings"
+                android:title="@string/processor_settings_title"
+                android:summary="@string/processor_settings_summary">
+                <intent
+                    android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.android.settings"
+                    android:targetClass="com.android.settings.Settings$ProcessorSettings" />
+                </PreferenceScreen>
+                <!-- Scheduler -->
+                <PreferenceScreen
+                android:key="scheduler_settings"
+                android:title="@string/scheduler_settings_title"
+                android:summary="@string/scheduler_settings_summary">
+                <intent
+                    android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.android.settings"
+                    android:targetClass="com.android.settings.Settings$IOScheduler" />
+                </PreferenceScreen>
+	</PreferenceCategory>
 
 </PreferenceScreen>
