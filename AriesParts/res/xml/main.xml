@@ -99,4 +99,15 @@
                 android:summary="@string/vibration_summary_head" />
          </PreferenceCategory>
 
+	<PreferenceCategory
+                android:title="@string/category_mackay_title"
+                android:key="category_mackay">
+		<CheckBoxPreference
+			android:key="wifi_speed"
+			android:title="@string/wifi_speed_head"
+			android:summaryOn="@string/wifi_speed_on"
+			android:summaryOff="@string/wifi_speed_off"
+                android:persistent="true" />
+	</PreferenceCategory>
+
 </PreferenceScreen>

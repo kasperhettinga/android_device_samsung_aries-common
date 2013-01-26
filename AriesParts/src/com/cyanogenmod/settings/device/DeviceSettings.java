@@ -28,6 +28,8 @@ public class DeviceSettings extends PreferenceActivity  {
     public static final String KEY_DESKDOCK_AUDIO = "deskdock_audio";
     public static final String KEY_DOCK_AUDIO_CATEGORY = "category_dock_audio";
     public static final String KEY_VIBRATION = "vibration";
+    public static final String KEY_WIFI_SPEED = "wifi_speed";
+    public static final String KEY_MACKAY_CATEGORY = "category_mackay";
 
     private ColorTuningPreference mColorTuning;
     private ListPreference mMdnie;
@@ -40,6 +42,7 @@ public class DeviceSettings extends PreferenceActivity  {
     private CheckBoxPreference mCarDockAudio;
     private CheckBoxPreference mDeskDockAudio;
     private VibrationPreference mVibration;
+    private CheckBoxPreference mWifiSpeed;
 
     private BroadcastReceiver mHeadsetReceiver = new BroadcastReceiver() {
 
@@ -97,6 +100,15 @@ public class DeviceSettings extends PreferenceActivity  {
 
         mVibration = (VibrationPreference) findPreference(KEY_VIBRATION);
         mVibration.setEnabled(VibrationPreference.isSupported());
+
+        mWifiSpeed = (CheckBoxPreference) findPreference(KEY_WIFI_SPEED);
+        if (Mackay.isSupported()) {
+            mWifiSpeed.setOnPreferenceChangeListener(new Mackay());
+        } else {
+            PreferenceCategory category = (PreferenceCategory) getPreferenceScreen().findPreference(KEY_MACKAY_CATEGORY);
+            category.removePreference(mWifiSpeed);
+            getPreferenceScreen().removePreference(category);
+        }
 
         mTvOut = new TvOut();
         mTvOutEnable = (CheckBoxPreference) findPreference(KEY_TVOUT_ENABLE);

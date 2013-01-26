@@ -56,6 +56,11 @@
     <string name="vibration_title">Vibration intensity</string>
     <string name="vibration_test_title">Test</string>
 
+    <string name="category_mackay_title">Mackay kernel settings</string>
+    <string name="wifi_speed_head">WiFi mode when screen off</string>
+    <string name="wifi_speed_on">Fast</string>
+    <string name="wifi_speed_off">Energy-saving</string>
+
     <string name="button_reset_title">Reset</string>
 
     <!-- Used for activity title. Usually not visible, except on the
