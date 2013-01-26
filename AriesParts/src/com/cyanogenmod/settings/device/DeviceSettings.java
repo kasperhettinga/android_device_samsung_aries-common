@@ -115,7 +115,6 @@ public class DeviceSettings extends PreferenceActivity  {
             getPreferenceScreen().removePreference(category);
         }
 
-
         mTvOut = new TvOut();
         mTvOutEnable = (CheckBoxPreference) findPreference(KEY_TVOUT_ENABLE);
         mTvOutSystem = (ListPreference) findPreference(KEY_TVOUT_SYSTEM);

@@ -22,7 +22,6 @@ public class Mackay implements OnPreferenceChangeListener {
      */
     public static boolean isSupported() {
         boolean supported = true;
-
         for (int i = 0; i < FILE_PATH.length; i++) {
             if (!Utils.fileExists(FILE_PATH[i])) {
                 supported = false;
