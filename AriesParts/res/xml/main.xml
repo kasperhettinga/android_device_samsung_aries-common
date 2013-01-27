@@ -99,6 +99,7 @@
                 android:summary="@string/vibration_summary_head" />
          </PreferenceCategory>
 
+        <!-- Mackay settings -->
 	<PreferenceCategory
                 android:title="@string/category_mackay_title"
                 android:key="category_mackay">
@@ -119,6 +120,14 @@
 	                android:key="blx"
 	                android:title="@string/blx_title_head"
 	                android:summary="@string/blx_summary_head" />
+	        <!-- Performance settings -->
+                <PreferenceScreen
+                    android:key="@string/performance_settings"
+                    android:title="@string/performance_settings_title"
+                    android:summary="@string/performance_settings_summary">
+                    <intent
+	                android:action="android.settings.PERFORMANCE_SETTINGS"/>
+                </PreferenceScreen>
 	</PreferenceCategory>
 
 </PreferenceScreen>
