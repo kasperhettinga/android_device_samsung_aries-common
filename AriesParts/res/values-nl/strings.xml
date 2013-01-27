@@ -63,6 +63,12 @@
     <string name="fast_charge_head">Snelladen</string>
     <string name="fast_charge_on">Snelladen ingeschakeld</string>
     <string name="fast_charge_off">Snelladen uitgeschakeld</string>
+    <string name="blx_title_head">Acculevensduurverlenger (BLX)</string>
+    <string name="blx_summary_head">Stel oplaadlimiet in, wat mogelijk de levensduur van de accu verlengt.</string>
+    <string name="blx_title">BLX - oplaadlimiet</string>
+    <string name="performance_settings">Prestatiesinstellingen</string>
+    <string name="performance_settings_title">CPU instellingen</string>
+    <string name="performance_settings_summary">Stel governor, scheduler en andere CPU parameters in.</string>
 
     <!-- Used for activity title. Usually not visible, except on the
          multi-task screen -->

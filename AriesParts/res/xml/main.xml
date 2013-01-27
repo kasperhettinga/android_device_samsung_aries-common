@@ -101,33 +101,33 @@
 
         <!-- Mackay settings -->
 	<PreferenceCategory
-                android:title="@string/category_mackay_title"
-                android:key="category_mackay">
-		<CheckBoxPreference
-			android:key="wifi_speed"
-			android:title="@string/wifi_speed_head"
-			android:summaryOn="@string/wifi_speed_on"
-			android:summaryOff="@string/wifi_speed_off"
-                android:persistent="true" />
-		<CheckBoxPreference
-			android:key="fast_charge"
-			android:title="@string/fast_charge_head"
-			android:summaryOn="@string/fast_charge_on"
-			android:summaryOff="@string/fast_charge_off"
-                android:persistent="true" />
-	        <!-- BLX settings -->
-	        <com.cyanogenmod.settings.device.BLXPreference 
-	                android:key="blx"
-	                android:title="@string/blx_title_head"
-	                android:summary="@string/blx_summary_head" />
-	        <!-- Performance settings -->
-                <PreferenceScreen
-                    android:key="@string/performance_settings"
-                    android:title="@string/performance_settings_title"
-                    android:summary="@string/performance_settings_summary">
-                    <intent
-	                android:action="android.settings.PERFORMANCE_SETTINGS"/>
-                </PreferenceScreen>
+            android:title="@string/category_mackay_title"
+            android:key="category_mackay">
+            <CheckBoxPreference
+               android:key="wifi_speed"
+               android:title="@string/wifi_speed_head"
+               android:summaryOn="@string/wifi_speed_on"
+               android:summaryOff="@string/wifi_speed_off"
+               android:persistent="true" />
+            <CheckBoxPreference
+               android:key="fast_charge"
+               android:title="@string/fast_charge_head"
+               android:summaryOn="@string/fast_charge_on"
+               android:summaryOff="@string/fast_charge_off"
+               android:persistent="true" />
+	    <!-- BLX settings -->
+	    <com.cyanogenmod.settings.device.BLXPreference 
+               android:key="blx"
+               android:title="@string/blx_title_head"
+               android:summary="@string/blx_summary_head" />
+	    <!-- Performance settings -->
+            <PreferenceScreen
+               android:key="@string/performance_settings"
+               android:title="@string/performance_settings_title"
+               android:summary="@string/performance_settings_summary">
+               <intent
+	           android:action="android.settings.PERFORMANCE_SETTINGS"/>
+            </PreferenceScreen>
 	</PreferenceCategory>
 
 </PreferenceScreen>
