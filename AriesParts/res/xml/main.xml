@@ -120,13 +120,21 @@
                android:key="blx"
                android:title="@string/blx_title_head"
                android:summary="@string/blx_summary_head" />
-	    <!-- Performance settings -->
+	    <!-- Processor settings -->
             <PreferenceScreen
-               android:key="@string/performance_settings"
-               android:title="@string/performance_settings_title"
-               android:summary="@string/performance_settings_summary">
+               android:key="@string/processor_settings"
+               android:title="@string/processor_settings_title"
+               android:summary="@string/processor_settings_summary">
                <intent
-	           android:action="com.android.settings.Settings$PerformanceSettings"/>
+	           android:action="com.android.settings.Settings$ProcessorSettings"/>
+            </PreferenceScreen>
+	    <!-- Processor settings -->
+            <PreferenceScreen
+               android:key="@string/ioscheduler_settings"
+               android:title="@string/ioscheduler_settings_title"
+               android:summary="@string/ioscheduler_settings_summary">
+               <intent
+	           android:action="com.android.settings.Settings$ProcessorSettings"/>
             </PreferenceScreen>
 	</PreferenceCategory>
 

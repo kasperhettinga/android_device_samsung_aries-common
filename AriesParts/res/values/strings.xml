@@ -64,11 +64,14 @@
     <string name="fast_charge_on">Fast charge enabled</string>
     <string name="fast_charge_off">Fast charge disabled</string>
     <string name="blx_title_head">Battery life extender (BLX)</string>
-    <string name="blx_summary_head">Set charging limit, potentially increasing battery life.</string>
+    <string name="blx_summary_head">Set charging limit, potentially increasing battery life</string>
     <string name="blx_title">BLX - charging limit</string>
-    <string name="performance_settings">Performance settings</string>
-    <string name="performance_settings_title">CPU settings</string>
-    <string name="performance_settings_summary">Set governor, scheduler and other CPU parameters.</string>
+    <string name="processor_settings">Processor</string>
+    <string name="processor_settings_title">Processor</string>
+    <string name="processor_settings_summary">Change governor and CPU frequencies</string>
+    <string name="ioscheduler_settings">IO scheduler</string>
+    <string name="ioscheduler_settings_title">IO scheduler</string>
+    <string name="ioscheduler_settings_summary">Change IO scheduler</string>
 
     <string name="button_reset_title">Reset</string>
 
