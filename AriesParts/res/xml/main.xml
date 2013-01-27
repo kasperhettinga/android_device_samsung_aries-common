@@ -126,7 +126,7 @@
                android:title="@string/performance_settings_title"
                android:summary="@string/performance_settings_summary">
                <intent
-	           android:action="android.settings.PERFORMANCE_SETTINGS"/>
+	           android:action="com.android.settings.Settings$PerformanceSettings"/>
             </PreferenceScreen>
 	</PreferenceCategory>
 
