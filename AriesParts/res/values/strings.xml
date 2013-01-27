@@ -63,6 +63,9 @@
     <string name="fast_charge_head">Fast charge</string>
     <string name="fast_charge_on">Fast charge enabled</string>
     <string name="fast_charge_off">Fast charge disabled</string>
+    <string name="blx_title_head">Battery life extender (BLX)</string>
+    <string name="blx_summary_head">Set charging limit, potentially increasing battery life</string>
+    <string name="blx_title">BLX - charging limit</string>
 
     <string name="button_reset_title">Reset</string>
 

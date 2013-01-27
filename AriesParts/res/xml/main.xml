@@ -114,7 +114,11 @@
 			android:summaryOn="@string/fast_charge_on"
 			android:summaryOff="@string/fast_charge_off"
                 android:persistent="true" />
-
+	        <!-- BLX settings -->
+	        <com.cyanogenmod.settings.device.BLXPreference 
+	                android:key="blx"
+	                android:title="@string/blx_title_head"
+	                android:summary="@string/blx_summary_head" />
 	</PreferenceCategory>
 
 </PreferenceScreen>
