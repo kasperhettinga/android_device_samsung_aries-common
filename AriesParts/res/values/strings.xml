@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Advanced settings</string>
+    <string name="app_name">Mackay Settings</string>
+
+    <string name="mackay_settings_title">Mackay kernel settings</string>
+    <string name="mackay_settings_summary">With this app, you can change the settings for the Mackay kernel. Use at your own risk\n\nIf you run another kernel, these settings may be nonfunctional or cause force closes.</string>
 
     <string name="category_screen_title">Screen</string>
     <string name="color_tuning_title_head">Color Tuning</string>
@@ -55,9 +58,6 @@
     <string name="vibration_summary_head">Control vibration intensity</string>
     <string name="vibration_title">Vibration intensity</string>
     <string name="vibration_test_title">Test</string>
-
-    <string name="mackay_settings_title">Mackay kernel settings</string>
-    <string name="mackay_settings_summary">Below, you can change the settings for the Mackay kernel. Use at your own risk\n\nIf you run another kernel, these settings may be nonfunctional or cause force closes.</string>
 
     <string name="category_wifi_title">WiFi power mode</string>
     <string name="wifi_speed_head">Screen off power mode</string>

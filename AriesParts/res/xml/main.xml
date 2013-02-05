@@ -2,6 +2,16 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
 	<PreferenceCategory
+                android:title="@string/mackay_settings_title"
+                android:key="category_mackay">
+                <PreferenceScreen
+                android:key="processor_settings"
+                android:title="@string/mackay_settings_title"
+                android:summary="@string/mackay_settings_summary">
+                </PreferenceScreen>
+	</PreferenceCategory>
+
+	<PreferenceCategory
     	android:title="@string/category_screen_title">
 	    <!-- Color tuning -->
 	    <com.cyanogenmod.settings.device.ColorTuningPreference 
@@ -98,16 +108,6 @@
                 android:title="@string/vibration_title_head"
                 android:summary="@string/vibration_summary_head" />
          </PreferenceCategory>
-
-	<PreferenceCategory
-                android:title="@string/mackay_settings_title"
-                android:key="category_mackay">
-                <PreferenceScreen
-                android:key="processor_settings"
-                android:title="@string/mackay_settings_title"
-                android:summary="@string/mackay_settings_summary">
-                </PreferenceScreen>
-	</PreferenceCategory>
 
 	<PreferenceCategory
                 android:title="@string/category_wifi_title"
