@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Geavanceerde instellingen</string>
+    <string name="app_name">Mackay-instellingen</string>
+    <string name="mackay_settings_title">Mackay kernel instellingen</string>
+    <string name="mackay_settings_summary">In deze app kun je de instellingen van de Mackay kernel aanpassen. Gebruik op eigen risico\n\nAls je een andere kernel gebruikt zijn deze instellingen mogelijk niet functioneel of zorgen ze voor geforceerd afsluiten.</string>
     <string name="category_screen_title">Scherm</string>
     <string name="color_tuning_title_head">Kleuren regelen</string>
     <string name="color_tuning_summary_head">Schermkleur kalibreren</string>
@@ -49,8 +51,6 @@
     <string name="vibration_title">Trilintensiteit</string>
     <string name="vibration_test_title">Testen</string>
     <string name="button_reset_title">Herstellen</string>
-    <string name="mackay_settings_title">Mackay kernel instellingen</string>
-    <string name="mackay_settings_summary">Hieronder kun je de instellingen van de Mackay kernel aanpassen. Gebruik op eigen risico\n\nAls je een andere kernel gebruikt zijn deze instellingen mogelijk niet functioneel of zorgen ze voor geforceerd afsluiten.</string>
     <string name="category_wifi_title">WiFi energiemodus</string>
     <string name="wifi_speed_head">Modus bij scherm uit</string>
     <string name="wifi_speed_on">Snel</string>
