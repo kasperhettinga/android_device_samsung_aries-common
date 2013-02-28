@@ -21,6 +21,11 @@
     <string name="backlight_timeout_title_head">Backlight Timeout</string>
     <string name="backlight_timeout_summary_head">Adjust the delay before the touch key backlight automatically turns off</string>
 
+    <string name="category_led_title">LED notification</string>
+    <string name="bln_head">BLN (reboot required)</string>
+    <string name="bln_on">BLN activated</string>
+    <string name="bln_off">Default CM-LED activated</string>
+
     <string name="category_radio_title">Radio</string>
     <string name="hspa_title_head">HSPA</string>
     <string name="hspa_summary_head">Enable HSDPA/HSUPA</string>
