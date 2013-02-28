@@ -20,6 +20,8 @@ public class DeviceSettings extends PreferenceActivity  {
     public static final String KEY_COLOR_TUNING = "color_tuning";
     public static final String KEY_MDNIE = "mdnie";
     public static final String KEY_BACKLIGHT_TIMEOUT = "backlight_timeout";
+    public static final String KEY_BLN = "bln";
+    public static final String KEY_LED_CATEGORY = "category_led";
     public static final String KEY_HSPA = "hspa";
     public static final String KEY_HSPA_CATEGORY = "category_radio";
     public static final String KEY_TVOUT_ENABLE = "tvout_enable";
@@ -41,6 +43,7 @@ public class DeviceSettings extends PreferenceActivity  {
     private ColorTuningPreference mColorTuning;
     private ListPreference mMdnie;
     private ListPreference mBacklightTimeout;
+    private CheckBoxPreference mBLN;
     private ListPreference mHspa;
     private CheckBoxPreference mTvOutEnable;
     private ListPreference mTvOutSystem;
@@ -83,6 +86,15 @@ public class DeviceSettings extends PreferenceActivity  {
         mBacklightTimeout = (ListPreference) findPreference(KEY_BACKLIGHT_TIMEOUT);
         mBacklightTimeout.setEnabled(TouchKeyBacklightTimeout.isSupported());
         mBacklightTimeout.setOnPreferenceChangeListener(new TouchKeyBacklightTimeout());
+
+        mBLN = (CheckBoxPreference) findPreference(KEY_BLN);
+        if (Led.isSupported()) {
+            mBLN.setOnPreferenceChangeListener(new Led());
+        } else {
+            PreferenceCategory category = (PreferenceCategory) getPreferenceScreen().findPreference(KEY_LED_CATEGORY);
+            category.removePreference(mBLN);
+            getPreferenceScreen().removePreference(category);
+        }
 
         mHspa = (ListPreference) findPreference(KEY_HSPA);
         if (Hspa.isSupported()) {
