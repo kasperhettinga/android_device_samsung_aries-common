@@ -17,6 +17,7 @@ public class Startup extends BroadcastReceiver {
         ColorTuningPreference.restore(context);
         Mdnie.restore(context);
         TouchKeyBacklightTimeout.restore(context);
+        Led.restore(context);
         Hspa.restore(context);
         VolumeBoostPreference.restore(context);
         DockAudio.restore(context);
