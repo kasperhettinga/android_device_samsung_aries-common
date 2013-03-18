@@ -17,6 +17,8 @@ import android.preference.PreferenceManager;
 
 public class DeviceSettings extends PreferenceActivity  {
 
+    public static final String KEY_CWM = "cwm";
+    public static final String KEY_RECOVERY_CATEGORY = "category_recovery";
     public static final String KEY_COLOR_TUNING = "color_tuning";
     public static final String KEY_MDNIE = "mdnie";
     public static final String KEY_BACKLIGHT_TIMEOUT = "backlight_timeout";
@@ -40,6 +42,7 @@ public class DeviceSettings extends PreferenceActivity  {
     public static final String KEY_BLX = "blx";
     public static final String KEY_APPLY = "apply";
 
+    private CheckBoxPreference mCWM;
     private ColorTuningPreference mColorTuning;
     private ListPreference mMdnie;
     private ListPreference mBacklightTimeout;
@@ -75,6 +78,15 @@ public class DeviceSettings extends PreferenceActivity  {
         addPreferencesFromResource(R.xml.main);
 
 	preferences = PreferenceManager.getDefaultSharedPreferences(this);
+
+        mCWM = (CheckBoxPreference) findPreference(KEY_CWM);
+        if (Recovery.isSupported()) {
+            mCWM.setOnPreferenceChangeListener(new Recovery());
+        } else {
+            PreferenceCategory category = (PreferenceCategory) getPreferenceScreen().findPreference(KEY_RECOVERY_CATEGORY);
+            category.removePreference(mCWM);
+            getPreferenceScreen().removePreference(category);
+        }
 
         mColorTuning = (ColorTuningPreference) findPreference(KEY_COLOR_TUNING);
         mColorTuning.setEnabled(ColorTuningPreference.isSupported());
