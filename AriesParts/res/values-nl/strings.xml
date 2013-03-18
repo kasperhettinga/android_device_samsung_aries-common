@@ -3,6 +3,10 @@
     <string name="app_name">Mackay-instellingen</string>
     <string name="mackay_settings_title">Mackay kernel instellingen</string>
     <string name="mackay_settings_summary">In deze app kun je de instellingen van de Mackay kernel aanpassen. Gebruik op eigen risico\n\nAls je een andere kernel gebruikt zijn deze instellingen mogelijk niet functioneel of zorgen ze voor geforceerd afsluiten.</string>
+    <string name="category_recovery_title">Kies de gewenste recovery</string>
+    <string name="cwm_head">Keuze tussen CWM en TWRP</string>
+    <string name="cwm_on">CWM geactiveerd</string>
+    <string name="cwm_off">TWRP geactiveerd</string>
     <string name="category_screen_title">Scherm</string>
     <string name="color_tuning_title_head">Kleuren regelen</string>
     <string name="color_tuning_summary_head">Schermkleur kalibreren</string>
