@@ -6,7 +6,7 @@
     <string name="mackay_settings_summary">With this app, you can change the settings for the Mackay kernel. Use at your own risk\n\nIf you run another kernel, these settings may be nonfunctional or cause force closes.</string>
 
     <string name="category_recovery_title">Choose the desired recovery</string>
-    <string name="cwm_head">Choose betwen CWM and TWRP</string>
+    <string name="cwm_head">Choose CWM or TWRP</string>
     <string name="cwm_on">CWM activated</string>
     <string name="cwm_off">TWRP activated</string>
 
