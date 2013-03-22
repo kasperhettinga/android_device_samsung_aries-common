@@ -190,6 +190,18 @@
                 </PreferenceScreen>
 	</PreferenceCategory>
 
+	<PreferenceCategory
+            android:title="@string/category_navigation_title"
+                android:key="category_navigation">
+	    <!-- LED notification setting -->
+		<CheckBoxPreference
+			android:key="navbar"
+			android:title="@string/navbar_head"
+			android:summaryOn="@string/navbar_on"
+			android:summaryOff="@string/navbar_off"
+                android:persistent="true" />
+	</PreferenceCategory>
+
         <PreferenceCategory
             android:title="@string/category_apply_settings"
             android:key="category_apply">

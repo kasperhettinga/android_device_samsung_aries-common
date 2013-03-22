@@ -27,6 +27,7 @@ public class Startup extends BroadcastReceiver {
         Wifi.restore(context);
         Charge.restore(context);
         BLXPreference.restore(context);
+        Navigation.restore(context);
 	}
     }
 
