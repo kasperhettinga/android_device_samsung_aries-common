@@ -104,6 +104,11 @@
     <string name="scheduler_settings_title">Scheduler</string>
     <string name="scheduler_settings_summary">Chage in/output scheduler</string>
 
+    <string name="category_navigation_title">Navbar (reboot required)</string>
+    <string name="navbar_head">Activate navbar</string>
+    <string name="navbar_off">Navbar not activated</string>
+    <string name="navbar_on">Navbar activated</string>
+
     <string name="button_reset_title">Reset</string>
 
     <!-- Used for activity title. Usually not visible, except on the
