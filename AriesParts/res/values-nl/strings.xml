@@ -90,6 +90,10 @@
     <string name="processor_settings_summary">Wijzig governor en min/max frequentie</string>
     <string name="scheduler_settings_title">Scheduler</string>
     <string name="scheduler_settings_summary">Wijzig in/output scheduler</string>
+    <string name="category_navigation_title">Navbar (reboot nodig)</string>
+    <string name="navbar_head">Activeer navbar</string>
+    <string name="navbar_off">Navbar gedeactiveerd</string>
+    <string name="navbar_on">Navbar geactiveerd</string>
     <string name="generic_warning_title">Let op</string>
     <string name="imei_not_sane_title">Let op</string>
     <string name="imei_not_sane_message">Er is een probleem gevonden met uw telefoon. Het IMEI-nummer van uw telefoon is ongeldig. Hierdoor kunnen problemen optreden met uw mobiele netwerkverbinding, inclusief het niet kunnen bellen van het alarmnummer.</string>
