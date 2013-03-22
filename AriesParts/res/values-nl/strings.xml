@@ -90,6 +90,11 @@
     <string name="scheduler_settings_title">Scheduler</string>
     <string name="scheduler_settings_summary">Wijzig in/output scheduler</string>
 
+    <string name="category_navigation_title">Navbar (reboot nodig)</string>
+    <string name="navbar_head">Activeer navbar</string>
+    <string name="navbar_off">Navbar gedeactiveerd</string>
+    <string name="navbar_on">Navbar geactiveerd</string>
+
     <!-- Used for activity title. Usually not visible, except on the
          multi-task screen -->
     <string name="generic_warning_title">Let op</string>
