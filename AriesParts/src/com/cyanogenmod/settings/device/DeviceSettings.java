@@ -42,6 +42,10 @@ public class DeviceSettings extends PreferenceActivity  {
     public static final String KEY_BLX = "blx";
     public static final String KEY_NAVIGATION_CATEGORY = "category_navigation";
     public static final String KEY_NAVBAR = "navbar";
+    public static final String KEY_TOUCHWAKE_CATEGORY = "category_touchwake";
+    public static final String KEY_TOUCHWAKEACTIVE = "touchwakeactive";
+    public static final String KEY_TOUCHWAKESETTINGS_CATEGORY = "category_touchwakesettings";
+    public static final String KEY_TOUCHWAKEDELAY = "touchwakedelay";
     public static final String KEY_APPLY = "apply";
 
     private CheckBoxPreference mCWM;
@@ -61,6 +65,8 @@ public class DeviceSettings extends PreferenceActivity  {
     private CheckBoxPreference mFastCharge;
     private BLXPreference mBLX;
     private CheckBoxPreference mNavbar;
+    private CheckBoxPreference mTouchWakeActive;
+    private TouchWakePreference mTouchWakeDelay;
     private CheckBoxPreference mApply;
 
     private static SharedPreferences preferences;
@@ -171,6 +177,18 @@ public class DeviceSettings extends PreferenceActivity  {
             category.removePreference(mNavbar);
             getPreferenceScreen().removePreference(category);
         }
+
+        mTouchWakeActive = (CheckBoxPreference) findPreference(KEY_TOUCHWAKEACTIVE);
+        if (TouchWake.isSupported()) {
+            mTouchWakeActive.setOnPreferenceChangeListener(new TouchWake());
+        } else {
+            PreferenceCategory category = (PreferenceCategory) getPreferenceScreen().findPreference(KEY_TOUCHWAKE_CATEGORY);
+            category.removePreference(mTouchWakeActive);
+            getPreferenceScreen().removePreference(category);
+        }
+
+        mTouchWakeDelay = (TouchWakePreference) findPreference(KEY_TOUCHWAKEDELAY);
+        mTouchWakeDelay.setEnabled(TouchWakePreference.isSupported());
 
         mTvOut = new TvOut();
         mTvOutEnable = (CheckBoxPreference) findPreference(KEY_TVOUT_ENABLE);
