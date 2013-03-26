@@ -94,6 +94,14 @@
     <string name="navbar_head">Activeer navbar</string>
     <string name="navbar_off">Navbar gedeactiveerd</string>
     <string name="navbar_on">Navbar geactiveerd</string>
+    <string name="category_touchwake_title">Touchwake</string>
+    <string name="touchwakeactive_head">Activeer touchwake</string>
+    <string name="touchwakeactive_off">Touchwake gedeactiveerd</string>
+    <string name="touchwakeactive_on">Touchwake geactiveerd</string>
+    <string name="category_touchwakesettings_title">Touchwake instellingen</string>
+    <string name="touchwakedelay_title_head">Touchwake-vertraging</string>
+    <string name="touchwakedelay_summary_head">Stel touchwake-vertraging in</string>
+    <string name="touchwakedelay_title">Touchwake-vertraging (ms)</string>
     <string name="generic_warning_title">Let op</string>
     <string name="imei_not_sane_title">Let op</string>
     <string name="imei_not_sane_message">Er is een probleem gevonden met uw telefoon. Het IMEI-nummer van uw telefoon is ongeldig. Hierdoor kunnen problemen optreden met uw mobiele netwerkverbinding, inclusief het niet kunnen bellen van het alarmnummer.</string>
