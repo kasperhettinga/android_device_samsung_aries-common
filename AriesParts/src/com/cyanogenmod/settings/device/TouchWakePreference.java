@@ -1,0 +1,158 @@
+package com.cyanogenmod.settings.device;
+
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+import android.preference.DialogPreference;
+import android.preference.PreferenceManager;
+import android.util.AttributeSet;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.SeekBar;
+import android.widget.TextView;
+
+public class TouchWakePreference extends DialogPreference implements OnClickListener {
+
+    private static final int SEEKBAR_ID = R.id.touchwakedelay_seekbar;
+
+    private static final int VALUE_DISPLAY_ID = R.id.touchwakedelay_value;
+
+    private static final String FILE_PATH = "/sys/devices/virtual/misc/touchwake/delay";
+
+    private TouchWakeSeekBar mSeekBar = new TouchWakeSeekBar();
+
+    private static final int MAX_VALUE = 90000;
+
+    // Track instances to know when to restore original value
+    // (when the orientation changes, a new dialog is created before the old one is destroyed)
+    private static int sInstances = 0;
+
+    public TouchWakePreference(Context context, AttributeSet attrs) {
+        super(context, attrs);
+
+        setDialogLayoutResource(R.layout.preference_dialog_touchwakedelay);
+    }
+
+    @Override
+    protected void onBindDialogView(View view) {
+        super.onBindDialogView(view);
+
+        sInstances++;
+
+        SeekBar seekBar = (SeekBar) view.findViewById(SEEKBAR_ID);
+        TextView valueDisplay = (TextView) view.findViewById(VALUE_DISPLAY_ID);
+        mSeekBar = new TouchWakeSeekBar(seekBar, valueDisplay, FILE_PATH);
+
+        SetupButtonClickListener(view);
+    }
+
+    private void SetupButtonClickListener(View view) {
+        Button mResetButton = (Button)view.findViewById(R.id.touchwakedelay_reset);
+        mResetButton.setOnClickListener(this);
+    }
+
+    @Override
+    protected void onDialogClosed(boolean positiveResult) {
+        super.onDialogClosed(positiveResult);
+
+        sInstances--;
+
+        if (positiveResult) {
+            mSeekBar.save();
+        } else if (sInstances == 0) {
+            mSeekBar.reset();
+        }
+    }
+
+    public static void restore(Context context) {
+        if (!isSupported()) {
+            return;
+        }
+
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+        int value = sharedPrefs.getInt(FILE_PATH, MAX_VALUE);
+        Utils.writeValue(FILE_PATH, String.valueOf(value));
+    }
+
+    public static boolean isSupported() {
+        boolean supported = true;
+        if (!Utils.fileExists(FILE_PATH)) {
+            supported = false;
+        }
+
+        return supported;
+    }
+
+    class TouchWakeSeekBar implements SeekBar.OnSeekBarChangeListener {
+
+        protected String mFilePath;
+        protected int mOriginal;
+        protected SeekBar mSeekBar;
+        protected TextView mValueDisplay;
+
+        public TouchWakeSeekBar(SeekBar seekBar, TextView valueDisplay, String filePath) {
+            mSeekBar = seekBar;
+            mValueDisplay = valueDisplay;
+            mFilePath = filePath;
+
+            // Read original value
+            SharedPreferences sharedPreferences = getSharedPreferences();
+            mOriginal = sharedPreferences.getInt(mFilePath, MAX_VALUE);
+
+            seekBar.setMax(MAX_VALUE);
+            reset();
+            seekBar.setOnSeekBarChangeListener(this);
+        }
+
+        // For inheriting class
+        protected TouchWakeSeekBar() {
+        }
+
+        public void reset() {
+            mSeekBar.setProgress(mOriginal);
+            updateValue(mOriginal);
+        }
+
+        public void save() {
+            Editor editor = getEditor();
+            editor.putInt(mFilePath, mSeekBar.getProgress());
+            editor.commit();
+        }
+
+        @Override
+        public void onProgressChanged(SeekBar seekBar, int progress,
+                boolean fromUser) {
+            Utils.writeValue(mFilePath, String.valueOf(progress));
+            updateValue(progress);
+        }
+
+        @Override
+        public void onStartTrackingTouch(SeekBar seekBar) {
+            // Do nothing
+        }
+
+        @Override
+        public void onStopTrackingTouch(SeekBar seekBar) {
+            // Do nothing
+        }
+
+        protected void updateValue(int progress) {
+            mValueDisplay.setText(String.valueOf(progress));
+        }
+
+        public void resetDefault() {
+            mSeekBar.setProgress(MAX_VALUE);
+            updateValue(MAX_VALUE);
+            Utils.writeValue(FILE_PATH, String.valueOf(MAX_VALUE));
+        }
+    }
+
+    public void onClick(View v) {
+        switch(v.getId()) {
+            case R.id.touchwakedelay_reset:
+                mSeekBar.resetDefault();
+                break;
+        }
+    }
+}
