@@ -28,6 +28,8 @@ public class Startup extends BroadcastReceiver {
         Charge.restore(context);
         BLXPreference.restore(context);
         Navigation.restore(context);
+        TouchWake.restore(context);
+        TouchWakePreference.restore(context);
 	}
     }
 
