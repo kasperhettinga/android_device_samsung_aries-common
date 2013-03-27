@@ -99,8 +99,6 @@
     <string name="touchwakeactive_head">Activeer touchwake</string>
     <string name="touchwakeactive_off">Touchwake gedeactiveerd</string>
     <string name="touchwakeactive_on">Touchwake geactiveerd</string>
-
-    <string name="category_touchwakesettings_title">Touchwake instellingen</string>
     <string name="touchwakedelay_title_head">Touchwake-vertraging</string>
     <string name="touchwakedelay_summary_head">Stel touchwake-vertraging in</string>
     <string name="touchwakedelay_title">Touchwake-vertraging (ms)</string>
