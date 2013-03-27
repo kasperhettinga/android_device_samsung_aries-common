@@ -212,12 +212,6 @@
 			android:summaryOn="@string/touchwakeactive_on"
 			android:summaryOff="@string/touchwakeactive_off"
                 android:persistent="true" />
-	</PreferenceCategory>
-
-	<PreferenceCategory
-            android:title="@string/category_touchwakesettings_title"
-                android:key="category_touchwakesettings">
-                <!-- Touchwake setting -->
 	        <com.cyanogenmod.settings.device.TouchWakePreference
 	                android:key="touchwakedelay"
 	                android:title="@string/touchwakedelay_title_head"

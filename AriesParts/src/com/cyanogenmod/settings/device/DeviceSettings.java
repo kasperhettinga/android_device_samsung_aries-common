@@ -44,7 +44,6 @@ public class DeviceSettings extends PreferenceActivity  {
     public static final String KEY_NAVBAR = "navbar";
     public static final String KEY_TOUCHWAKE_CATEGORY = "category_touchwake";
     public static final String KEY_TOUCHWAKEACTIVE = "touchwakeactive";
-    public static final String KEY_TOUCHWAKESETTINGS_CATEGORY = "category_touchwakesettings";
     public static final String KEY_TOUCHWAKEDELAY = "touchwakedelay";
     public static final String KEY_APPLY = "apply";
 
