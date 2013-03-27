@@ -113,8 +113,6 @@
     <string name="touchwakeactive_head">Activate touchwake</string>
     <string name="touchwakeactive_off">Touchwake not activated</string>
     <string name="touchwakeactive_on">Touchwake activated</string>
-
-    <string name="category_touchwakesettings_title">Touchwake settings</string>
     <string name="touchwakedelay_title_head">Touchwake timeout</string>
     <string name="touchwakedelay_summary_head">Set touchwake delay</string>
     <string name="touchwakedelay_title">Touchwake delay (ms)</string>
