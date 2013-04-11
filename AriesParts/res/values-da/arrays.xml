@@ -10,6 +10,9 @@
 
   <string-array name="backlight_timeout_entries">
      <item>Standard (1.6 sekunder)</item>
+     <item>0.03 sekunder</item>
+     <item>0.12 sekunder</item>
+     <item>0.25 sekunder</item>
      <item>0.5 sekunder</item>
      <item>2 sekunder</item>
      <item>5 sekunder</item>

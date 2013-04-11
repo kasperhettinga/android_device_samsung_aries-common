@@ -10,6 +10,9 @@
 
     <string-array name="backlight_timeout_entries">
         <item>ברירת מחדל (1.6 שניות)</item>
+        <item>0.03 שניות</item>
+        <item>0.12 שניות</item>
+        <item>0.25 שניות</item>
         <item>0.5 שניות</item>
         <item>2 שניות</item>
         <item>5 שניות</item>
