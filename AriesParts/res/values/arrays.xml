@@ -34,6 +34,9 @@
 
     <string-array name="backlight_timeout_entries">
         <item>Default (1.6 seconds)</item>
+        <item>0.03 seconds</item>
+        <item>0.12 seconds</item>
+        <item>0.25 seconds</item>
         <item>0.5 seconds</item>
         <item>2 seconds</item>
         <item>5 seconds</item>
@@ -45,6 +48,9 @@
 
     <string-array name="backlight_timeout_entries_values" translatable="false">
         <item>1600</item>
+        <item>30</item>
+        <item>120</item>
+        <item>250</item>
         <item>500</item>
         <item>2000</item>
         <item>5000</item>

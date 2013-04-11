@@ -24,6 +24,9 @@
     </string-array>
     <string-array name="backlight_timeout_entries">
         <item>1,6 segundos (por defecto)</item>
+        <item>0,03 segundos</item>
+        <item>0,12 segundos</item>
+        <item>0,25 segundos</item>
         <item>0,5 segundos</item>
         <item>2 segundos</item>
         <item>5 segundos</item>
