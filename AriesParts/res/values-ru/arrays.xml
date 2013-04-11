@@ -10,6 +10,9 @@
     </string-array>
     <string-array name="backlight_timeout_entries">
         <item>По-умолч. (1.6 с)</item>
+        <item>0.03 с</item>
+        <item>0.12 с</item>
+        <item>0.25 с</item>
         <item>0.5 с</item>
         <item>2 с</item>
         <item>5 с</item>
