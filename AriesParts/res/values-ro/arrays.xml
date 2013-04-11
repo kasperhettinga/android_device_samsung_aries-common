@@ -24,6 +24,9 @@
     </string-array>
     <string-array name="backlight_timeout_entries">
         <item>Prestabilit (1.6 s)</item>
+        <item>0.03 s</item>
+        <item>0.12 s</item>
+        <item>0.25 s</item>
         <item>0.5 s</item>
         <item>2 s</item>
         <item>5 s</item>
