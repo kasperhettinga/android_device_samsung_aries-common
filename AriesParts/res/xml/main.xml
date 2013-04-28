@@ -146,17 +146,6 @@
 	</PreferenceCategory>
 
 	<PreferenceCategory
-                android:title="@string/category_charge_title"
-                android:key="category_charge">
-		<CheckBoxPreference
-			android:key="fast_charge"
-			android:title="@string/fast_charge_head"
-			android:summaryOn="@string/fast_charge_on"
-			android:summaryOff="@string/fast_charge_off"
-                android:persistent="true" />
-	</PreferenceCategory>
-
-	<PreferenceCategory
                 android:title="@string/category_blx_preference_title"
                 android:key="category_blx_preference">
 	        <com.cyanogenmod.settings.device.BLXPreference 

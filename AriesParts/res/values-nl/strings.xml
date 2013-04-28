@@ -74,11 +74,6 @@
     <string name="wifi_speed_on">Snel</string>
     <string name="wifi_speed_off">Energiebesparend</string>
 
-    <string name="category_charge_title">Snelladen</string>
-    <string name="fast_charge_head">Snelladen op USB</string>
-    <string name="fast_charge_on">Ingeschakeld</string>
-    <string name="fast_charge_off">Uitgeschakeld</string>
-
     <string name="category_blx_preference_title">Acculevensduurverlenger (BLX)</string>
     <string name="blx_title_head">Oplaadlimiet</string>
     <string name="blx_summary_head">Stel oplaadlimiet in, wat mogelijk de levensduur van de accu verlengt</string>

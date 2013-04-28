@@ -37,8 +37,6 @@ public class DeviceSettings extends PreferenceActivity  {
     public static final String KEY_VIBRATION = "vibration";
     public static final String KEY_WIFI_SPEED = "wifi_speed";
     public static final String KEY_WIFI_CATEGORY = "category_wifi";
-    public static final String KEY_FAST_CHARGE = "fast_charge";
-    public static final String KEY_CHARGE_CATEGORY = "category_charge";
     public static final String KEY_BLX = "blx";
     public static final String KEY_TOUCHWAKE_CATEGORY = "category_touchwake";
     public static final String KEY_TOUCHWAKEACTIVE = "touchwakeactive";
@@ -59,7 +57,6 @@ public class DeviceSettings extends PreferenceActivity  {
     private CheckBoxPreference mDeskDockAudio;
     private VibrationPreference mVibration;
     private CheckBoxPreference mWifiSpeed;
-    private CheckBoxPreference mFastCharge;
     private BLXPreference mBLX;
     private CheckBoxPreference mTouchWakeActive;
     private TouchWakePreference mTouchWakeDelay;
@@ -150,15 +147,6 @@ public class DeviceSettings extends PreferenceActivity  {
         } else {
             PreferenceCategory category = (PreferenceCategory) getPreferenceScreen().findPreference(KEY_WIFI_CATEGORY);
             category.removePreference(mWifiSpeed);
-            getPreferenceScreen().removePreference(category);
-        }
-
-        mFastCharge = (CheckBoxPreference) findPreference(KEY_FAST_CHARGE);
-        if (Charge.isSupported()) {
-            mFastCharge.setOnPreferenceChangeListener(new Charge());
-        } else {
-            PreferenceCategory category = (PreferenceCategory) getPreferenceScreen().findPreference(KEY_CHARGE_CATEGORY);
-            category.removePreference(mFastCharge);
             getPreferenceScreen().removePreference(category);
         }
 
