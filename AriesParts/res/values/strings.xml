@@ -74,11 +74,6 @@
     <string name="wifi_speed_on">Fast</string>
     <string name="wifi_speed_off">Energy-saving</string>
 
-    <string name="category_charge_title">Fast charge</string>
-    <string name="fast_charge_head">Fast charging on USB</string>
-    <string name="fast_charge_on">Enable</string>
-    <string name="fast_charge_off">Disabled</string>
-
     <string name="category_blx_preference_title">Battery life extender (BLX)</string>
     <string name="blx_title_head">Charging limit</string>
     <string name="blx_summary_head">Set charging limit, potentially increasing battery life</string>
