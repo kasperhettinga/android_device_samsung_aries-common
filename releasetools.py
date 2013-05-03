@@ -17,7 +17,6 @@
 
 import common
 import os
-import shutil
 
 LOCAL_DIR = os.path.dirname(os.path.abspath(__file__))
 TARGET_DIR = os.getenv('OUT')
@@ -73,14 +72,6 @@ def FullOTA_Assertions(info):
          'mount("ext4", "EMMC", "/dev/lvpool/userdata", "/data");\n'
          'delete("/data/local/mackay/blnactive");\n'
          'unmount("/data");'))
-
-  # Make common releasetools copy boot.img verbatim
-  kernel_path = os.path.join(info.input_tmp, "BOOT", "kernel")
-  prebuilt_dir = os.path.join(info.input_tmp, "BOOTABLE_IMAGES")
-  prebuilt_path = os.path.join(prebuilt_dir, "boot.img")
-  os.mkdir(prebuilt_dir)
-  shutil.copyfile(kernel_path, prebuilt_path)
-
 
 def FullOTA_InstallEnd(info):
   # Remove writing boot.img from script (we do it in updater.sh)
