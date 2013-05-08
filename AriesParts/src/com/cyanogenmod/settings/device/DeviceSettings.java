@@ -40,8 +40,6 @@ public class DeviceSettings extends PreferenceActivity  {
     public static final String KEY_FAST_CHARGE = "fast_charge";
     public static final String KEY_CHARGE_CATEGORY = "category_charge";
     public static final String KEY_BLX = "blx";
-    public static final String KEY_NAVIGATION_CATEGORY = "category_navigation";
-    public static final String KEY_NAVBAR = "navbar";
     public static final String KEY_TOUCHWAKE_CATEGORY = "category_touchwake";
     public static final String KEY_TOUCHWAKEACTIVE = "touchwakeactive";
     public static final String KEY_TOUCHWAKEDELAY = "touchwakedelay";
@@ -63,7 +61,6 @@ public class DeviceSettings extends PreferenceActivity  {
     private CheckBoxPreference mWifiSpeed;
     private CheckBoxPreference mFastCharge;
     private BLXPreference mBLX;
-    private CheckBoxPreference mNavbar;
     private CheckBoxPreference mTouchWakeActive;
     private TouchWakePreference mTouchWakeDelay;
     private CheckBoxPreference mApply;
@@ -167,15 +164,6 @@ public class DeviceSettings extends PreferenceActivity  {
 
         mBLX = (BLXPreference) findPreference(KEY_BLX);
         mBLX.setEnabled(BLXPreference.isSupported());
-
-        mNavbar = (CheckBoxPreference) findPreference(KEY_NAVBAR);
-        if (Navigation.isSupported()) {
-            mNavbar.setOnPreferenceChangeListener(new Navigation());
-        } else {
-            PreferenceCategory category = (PreferenceCategory) getPreferenceScreen().findPreference(KEY_NAVIGATION_CATEGORY);
-            category.removePreference(mNavbar);
-            getPreferenceScreen().removePreference(category);
-        }
 
         mTouchWakeActive = (CheckBoxPreference) findPreference(KEY_TOUCHWAKEACTIVE);
         if (TouchWake.isSupported()) {
