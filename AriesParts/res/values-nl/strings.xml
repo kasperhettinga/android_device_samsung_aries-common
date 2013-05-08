@@ -79,11 +79,6 @@
     <string name="blx_summary_head">Stel oplaadlimiet in, wat mogelijk de levensduur van de accu verlengt</string>
     <string name="blx_title">BLX - oplaadlimiet</string>
 
-    <string name="category_navigation_title">Navbar (reboot nodig)</string>
-    <string name="navbar_head">Activeer navbar</string>
-    <string name="navbar_off">Navbar gedeactiveerd</string>
-    <string name="navbar_on">Navbar geactiveerd</string>
-
     <string name="category_touchwake_title">Touchwake</string>
     <string name="touchwakeactive_head">Activeer touchwake</string>
     <string name="touchwakeactive_off">Touchwake gedeactiveerd</string>
