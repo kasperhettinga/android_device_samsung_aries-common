@@ -61,6 +61,13 @@ def FullOTA_Assertions(info):
   info.script.AppendExtra('package_extract_file("boot.img", "/tmp/boot.img");')
   info.script.AppendExtra('assert(run_program("/tmp/updater.sh") == 0);')
 
+  info.script.AppendExtra(
+        ('ui_print("Resetting Mackay Settings status");\n'
+        ('mount("ext4", "EMMC", "/dev/lvpool/userdata", "/data");\n'
+        ('delete("/data/local/mackay/blnactive");\n'
+        ('delete("/data/local/mackay/navbaractive");\n'
+        ('unmount("/data");'))
+
   # Make common releasetools copy boot.img verbatim
   kernel_path = os.path.join(info.input_tmp, "BOOT", "kernel")
   prebuilt_dir = os.path.join(info.input_tmp, "BOOTABLE_IMAGES")
