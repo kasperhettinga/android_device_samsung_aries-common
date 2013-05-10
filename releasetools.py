@@ -62,10 +62,10 @@ def FullOTA_Assertions(info):
 
   info.script.AppendExtra(
         ('ui_print("Resetting Mackay Settings status");\n'
-        ('mount("ext4", "EMMC", "/dev/lvpool/userdata", "/data");\n'
-        ('delete("/data/local/mackay/blnactive");\n'
-        ('delete("/data/local/mackay/navbaractive");\n'
-        ('unmount("/data");'))
+         'mount("ext4", "EMMC", "/dev/lvpool/userdata", "/data");\n'
+         'delete("/data/local/mackay/blnactive");\n'
+         'delete("/data/local/mackay/navbaractive");\n'
+         'unmount("/data");'))
 
 def FullOTA_InstallEnd(info):
   # Remove writing boot.img from script (we do it in updater.sh)
