@@ -92,6 +92,7 @@ BOARD_BLUEDROID_VENDOR_CONF := device/samsung/aries-common/libbt_vndcfg.txt
 
 # Vold
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
+BOARD_UMS_LUNFILE := /sys/class/android_usb/android0/f_mass_storage/lun/file
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/s3c-usbgadget/gadget/lun%d/file"
 
 # Recovery
@@ -134,8 +135,8 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 #TWRP Flags
 DEVICE_RESOLUTION := 480x800
 TW_NO_REBOOT_BOOTLOADER := true
-TW_INTERNAL_STORAGE_PATH := "/sdcard"
-TW_INTERNAL_STORAGE_MOUNT_POINT := "sdcard"
-TW_EXTERNAL_STORAGE_PATH := "/emmc"
-TW_EXTERNAL_STORAGE_MOUNT_POINT := "emmc"
+TW_INTERNAL_STORAGE_PATH := "/internal_sd"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "internal_sd"
+TW_EXTERNAL_STORAGE_PATH := "/external_sd"
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
 TW_FLASH_FROM_STORAGE := true
