@@ -25,7 +25,6 @@ public class Startup extends BroadcastReceiver {
         VibrationPreference.restore(context);
         Wifi.restore(context);
         BLXPreference.restore(context);
-        Navigation.restore(context);
         TouchWake.restore(context);
         TouchWakePreference.restore(context);
 	}
