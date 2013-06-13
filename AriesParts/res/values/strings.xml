@@ -79,17 +79,6 @@
     <string name="blx_summary_head">Set charging limit, potentially increasing battery life</string>
     <string name="blx_title">BLX - charging limit</string>
 
-    <string name="category_performance_title">Performance</string>
-    <string name="processor_settings_title">CPU setting</string>
-    <string name="processor_settings_summary">Change governor and min/max frequencies</string>
-    <string name="scheduler_settings_title">Scheduler</string>
-    <string name="scheduler_settings_summary">Chage in/output scheduler</string>
-
-    <string name="category_navigation_title">Navbar (reboot required)</string>
-    <string name="navbar_head">Activate navbar</string>
-    <string name="navbar_off">Navbar not activated</string>
-    <string name="navbar_on">Navbar activated</string>
-
     <string name="category_touchwake_title">Touchwake</string>
     <string name="touchwakeactive_head">Activate touchwake</string>
     <string name="touchwakeactive_off">Touchwake not activated</string>
