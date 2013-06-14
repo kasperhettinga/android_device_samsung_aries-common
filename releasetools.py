@@ -34,6 +34,13 @@ def FullOTA_Assertions(info):
   info.output_zip.write(os.path.join(LOCAL_DIR, "bml_over_mtd.sh"), "bml_over_mtd.sh")
 
   info.script.AppendExtra(
+        ('ui_print("Checking device ID...");\n'
+         'assert(getprop("ro.product.device") == "galaxys" || getprop("ro.build.product") == "galaxys" || \n'
+         '     getprop("ro.product.device") == "galaxysmtd" || getprop("ro.build.product") == "galaxysmtd" || \n'
+         '     getprop("ro.product.device") == "GT-I9000" || getprop("ro.build.product") == "GT-I9000" || \n'
+         '     getprop("ro.product.device") == "GT-I9000M" || getprop("ro.build.product") == "GT-I9000M" || \n'
+         '     getprop("ro.product.device") == "GT-I9000T" || getprop("ro.build.product") == "GT-I9000T");'))
+  info.script.AppendExtra(
         ('package_extract_file("modem.bin", "/tmp/modem.bin");\n'
          'set_perm(0, 0, 0777, "/tmp/modem.bin");'))
   info.script.AppendExtra(
@@ -65,7 +72,6 @@ def FullOTA_Assertions(info):
         ('ui_print("Resetting Mackay Settings status");\n'
          'mount("ext4", "EMMC", "/dev/lvpool/userdata", "/data");\n'
          'delete("/data/local/mackay/blnactive");\n'
-         'delete("/data/local/mackay/navbaractive");\n'
          'unmount("/data");'))
 
   # Make common releasetools copy boot.img verbatim
