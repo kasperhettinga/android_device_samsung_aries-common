@@ -6,6 +6,8 @@ include $(CLEAR_VARS)
 LOCAL_SRC_FILES:= \
 	AudioHardware.cpp
 
+LOCAL_CFLAGS += -Wno-unused-variable -fno-strict-aliasing -Wno-error=strict-aliasing
+
 LOCAL_MODULE := audio.primary.aries
 LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
 LOCAL_STATIC_LIBRARIES:= libmedia_helper
