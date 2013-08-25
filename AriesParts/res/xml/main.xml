@@ -12,18 +12,6 @@
 	</PreferenceCategory>
 
 	<PreferenceCategory
-            android:title="@string/category_recovery_title"
-                android:key="category_recovery">
-	    <!-- LED notification setting -->
-		<CheckBoxPreference
-			android:key="cwm"
-			android:title="@string/cwm_head"
-			android:summaryOn="@string/cwm_on"
-			android:summaryOff="@string/cwm_off"
-                android:persistent="true" />
-	</PreferenceCategory>
-
-	<PreferenceCategory
     	android:title="@string/category_screen_title">
 	    <!-- Color tuning -->
 	    <com.cyanogenmod.settings.device.ColorTuningPreference 
