@@ -14,7 +14,6 @@ public class Startup extends BroadcastReceiver {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
         int apply = sharedPrefs.getBoolean(DeviceSettings.KEY_APPLY, true) ? 1 : 0;
 	if(apply == 1) {
-        Recovery.restore(context);
         ColorTuningPreference.restore(context);
         Mdnie.restore(context);
         TouchKeyBacklightTimeout.restore(context);
