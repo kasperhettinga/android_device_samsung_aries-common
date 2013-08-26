@@ -15,3 +15,7 @@ on boot
 
     # mass_storage support
     setprop sys.usb.config mass_storage,adb
+
+    # CWM key repeat
+    ro.cwm.enable_key_repeat=true
+    ro.cwm.repeatable_keys=114,115,139
