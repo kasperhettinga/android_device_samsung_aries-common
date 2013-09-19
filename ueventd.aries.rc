@@ -1,4 +1,4 @@
-
+# graphics
 /dev/pvrsrvkm             0666   system     system
 /dev/video0               0660   system     camera
 /dev/video1               0660   system     camera
@@ -7,6 +7,7 @@
 /dev/s3c-mem              0660   system     system
 /dev/s3c-mfc              0660   media      media
 
+# radio
 /dev/modem_ctl            0660   radio      radio
 /dev/modem_fmt            0660   radio      radio
 /dev/modem_rfs            0660   radio      radio
