@@ -106,6 +106,7 @@ BOARD_USES_BML_OVER_MTD := true
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/aries-common/shbootimg.mk
 TARGET_RECOVERY_FSTAB := device/samsung/aries-common/fstab.aries
 RECOVERY_FSTAB_VERSION := 2
+PRODUCT_COPY_FILES += device/samsung/aries-common/twrp.fstab:recovery/root/etc/twrp.fstab
 
 # Boot Animation
 TARGET_BOOTANIMATION_PRELOAD := true
