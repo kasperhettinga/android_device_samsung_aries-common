@@ -14,7 +14,15 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">Zaawansowane ustawienia</string>
+    <string name="app_name">Ustawienia Mackay</string>
+
+    <string name="mackay_settings_title">Mackay - ustawienia kernela</string>
+    <string name="mackay_settings_summary">Za pomocą tej aplikacji możesz zmienić ustawienia kernela Mackay. Używasz na własne ryzyko\n\nJeśli wgrasz inny kernel, ustawienia te mogą być niedostępne lub powodować wymuszenie zamknięcia aplikacji.</string>
+
+    <string name="category_recovery_title">Wybierz preferowany tryb recovery</string>
+    <string name="cwm_head">Wybierz CWM lub TWRP</string>
+    <string name="cwm_on">CWM włączony</string>
+    <string name="cwm_off">TWRP włączony</string>
 
     <string name="category_screen_title">Ekran</string>
     <string name="color_tuning_title_head">Kalibracja kolorów</string>
@@ -32,6 +40,11 @@
     <string name="backlight_timeout_title_head">Opóźnienie podświetlenia</string>
     <string name="backlight_timeout_summary_head">Dostosuj opóźnienie automatycznego wyłączenia podświetlenia przycisków dotykowych</string>
 
+    <string name="category_led_title">Powiadomienia LED</string>
+    <string name="bln_head">BLN (wymaga restartu)</string>
+    <string name="bln_on">BLN włączony</string>
+    <string name="bln_off">Domyślny CM-LED włączony</string>
+	
     <string name="category_radio_title">Radio</string>
     <string name="hspa_title_head">HSPA</string>
     <string name="hspa_summary_head">Aktywuj HSDPA/HSUPA</string>
@@ -70,11 +83,49 @@
     <string name="vibration_title">Intensywność wibracji</string>
     <string name="vibration_test_title">Testuj</string>
 
+    <string name="category_wifi_title">Tryb zasilania WiFi</string>
+    <string name="wifi_speed_head">WiFi w trybie uśpienia</string>
+    <string name="wifi_speed_on">Zawsze włączone</string>
+    <string name="wifi_speed_off">Oszczędzanie energii</string>
+
+    <string name="category_blx_preference_title">Wydłużanie życia baterii (BLX)</string>
+    <string name="blx_title_head">Limit ładowania</string>
+    <string name="blx_summary_head">Ustaw limit ładowania, potencjalnie wydłuża życie baterii</string>
+    <string name="blx_title">BLX - limit ładowania</string>
+
+    <string name="category_performance_title">Wydajność</string>
+    <string name="processor_settings_title">Procesor</string>
+    <string name="processor_settings_summary">Zmień zarządcę procesora i częstotliwość taktowania</string>
+    <string name="scheduler_settings_title">Zarządca I/O</string>
+    <string name="scheduler_settings_summary">Zmień zarządcę I/O</string>
+
+    <string name="category_navigation_title">Belka nawigacyjna (wymaga restartu)</string>
+    <string name="navbar_head">Aktywuj belkę nawigacyjną</string>
+    <string name="navbar_off">Belka nawigacyjna wyłączona</string>
+    <string name="navbar_on">Belka nawigacyjna włączona</string>
+
+    <string name="category_touchwake_title">Wybudzanie dotykiem (Touchwake)</string>
+    <string name="touchwakeactive_head">Uruchom wybudzanie dotykiem</string>
+    <string name="touchwakeactive_off">Wybudzanie dotykiem wyłączone</string>
+    <string name="touchwakeactive_on">Wybudzanie dotykiem włączone</string>
+    <string name="touchwakedelay_title_head">Limit czasu wybudzania dotykiem</string>
+    <string name="touchwakedelay_summary_head">Ustaw opóźnienie trybu wybudzania dotykiem</string>
+    <string name="touchwakedelay_title">Opóźnienie trybu wybudzania dotykiem (ms)</string>
+	
     <string name="button_reset_title">Resetuj</string>
-
+	
+    <!-- Used for activity title. Usually not visible, except on the
+multi-task screen -->
     <string name="generic_warning_title">Uwaga</string>
-
+	
+    <!-- Invalid IMEI -->
     <string name="imei_not_sane_title">Uwaga!</string>
     <string name="imei_not_sane_message">Został wykryty problem z Twoim urządzeniem. Numer IMEI Twojego urządzenia jest niepoprawny. Niepoprawny numer IMEI może spowodować problemy z siecią, w tym brak możliwości połączenia z numerami alarmowymi.</string>
     <string name="imei_not_sane_ok">OK</string>
+	
+	<string name="category_apply_settings">Zastosuj Ustawienia po restarcie</string>
+    <string name="apply_title">Zastosuj Ustawienia</string>
+    <string name="apply_summary_on">Ustawienia zostaną zastosowane</string>
+    <string name="apply_summary_off">Ustawienia nie zostaną zastosowane</string>
+	
 </resources>
