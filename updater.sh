@@ -168,9 +168,6 @@ elif /tmp/busybox test `/tmp/busybox cat /sys/class/mtd/mtd2/size` != "$MTD_SIZE
     /tmp/busybox umount -l /datadata
     /tmp/erase_image datadata
 
-    # write new kernel to boot partition
-    /tmp/bml_over_mtd.sh boot 72 reservoir 2004 /tmp/boot.img
-
 	# Remove /system/build.prop to trigger emergency boot
 	/tmp/busybox mount /system
 	/tmp/busybox rm -f /system/build.prop
@@ -234,9 +231,6 @@ elif /tmp/busybox test -e /dev/block/mtdblock0 ; then
     if ! /tmp/busybox test -e /sdcard/cyanogenmod.cfg ; then
         # update install - flash boot image then skip back to updater-script
         # (boot image is already flashed for first time install or old mtd upgrade)
-
-        # flash boot image
-        /tmp/bml_over_mtd.sh boot 72 reservoir 2004 /tmp/boot.img
 
         if ! $IS_GSM ; then
             /tmp/bml_over_mtd.sh recovery 102 reservoir 2004 /tmp/recovery_kernel
