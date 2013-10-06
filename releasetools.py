@@ -56,8 +56,11 @@ def FullOTA_Assertions(info):
   info.script.AppendExtra(
         ('package_extract_file("bml_over_mtd.sh", "/tmp/bml_over_mtd.sh");\n'
          'set_perm(0, 0, 0777, "/tmp/bml_over_mtd.sh");'))
-
+  
+  info.script.AppendExtra('assert(run_program("/tmp/erase_image", "boot"));')
   info.script.AppendExtra('package_extract_file("boot.img", "/tmp/boot.img");')
+  info.script.AppendExtra('assert(run_program("/tmp/bml_over_mtd.sh", "boot", "72", "reservoir", "2004", "/tmp/boot.img"));')
+
   info.script.AppendExtra('assert(run_program("/tmp/updater.sh") == 0);')
 
   info.script.AppendExtra(
