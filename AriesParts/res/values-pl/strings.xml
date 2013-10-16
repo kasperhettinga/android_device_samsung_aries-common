@@ -17,12 +17,7 @@
     <string name="app_name">Ustawienia Mackay</string>
 
     <string name="mackay_settings_title">Mackay - ustawienia kernela</string>
-    <string name="mackay_settings_summary">Za pomocą tej aplikacji możesz zmienić ustawienia kernela Mackay. Używasz na własne ryzyko\n\nJeśli wgrasz inny kernel, ustawienia te mogą być niedostępne lub powodować wymuszenie zamknięcia aplikacji.</string>
-
-    <string name="category_recovery_title">Preferowany tryb recovery</string>
-    <string name="cwm_head">Wybierz CWM lub TWRP</string>
-    <string name="cwm_on">CWM włączony</string>
-    <string name="cwm_off">TWRP włączony</string>
+    <string name="mackay_settings_summary">Za pomocą tej aplikacji możesz zmienić ustawienia kernela Mackay. Używasz na własne ryzyko.\n\nInstalując inny kernel, niektóre ustawienia mogą być niedostępne lub powodować wymuszenie zamknięcia aplikacji.</string>
 
     <string name="category_screen_title">Ekran</string>
     <string name="color_tuning_title_head">Kalibracja kolorów</string>
@@ -88,9 +83,9 @@
     <string name="wifi_speed_on">Zawsze włączone</string>
     <string name="wifi_speed_off">Oszczędzanie energii</string>
 
-    <string name="category_blx_preference_title">Wydłużanie życia baterii (BLX)</string>
+    <string name="category_blx_preference_title">Wydłużanie żywotności baterii (BLX)</string>
     <string name="blx_title_head">Limit ładowania</string>
-    <string name="blx_summary_head">Ustaw limit ładowania, potencjalnie wydłużając życie baterii</string>
+    <string name="blx_summary_head">Ustaw limit ładowania, potencjalnie wydłużając żywotność baterii</string>
     <string name="blx_title">BLX - limit ładowania</string>
 
     <string name="category_performance_title">Wydajność</string>
@@ -110,7 +105,7 @@
     <string name="touchwakeactive_on">Wybudzanie dotykiem włączone</string>
     <string name="touchwakedelay_title_head">Limit czasu wybudzania dotykiem</string>
     <string name="touchwakedelay_summary_head">Ustaw opóźnienie trybu wybudzania dotykiem</string>
-    <string name="touchwakedelay_title">Opóźnienie trybu wybudzania dotykiem (ms)</string>
+    <string name="touchwakedelay_title">Opóźnienie (ms)</string>
 	
     <string name="button_reset_title">Resetuj</string>
 	
