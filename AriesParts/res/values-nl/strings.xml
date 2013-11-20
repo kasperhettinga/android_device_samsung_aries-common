@@ -81,11 +81,6 @@
     <string name="blx_title_head">Oplaadlimiet</string>
     <string name="blx_summary_head">Stel oplaadlimiet in, wat mogelijk de levensduur van de accu verlengt</string>
     <string name="blx_title">BLX - oplaadlimiet</string>
-    <string name="category_performance_title">Prestaties</string>
-    <string name="processor_settings_title">Processor</string>
-    <string name="processor_settings_summary">Wijzig governor en min/max frequentie</string>
-    <string name="scheduler_settings_title">Scheduler</string>
-    <string name="scheduler_settings_summary">Wijzig in/output scheduler</string>
     <string name="category_navigation_title">Navbar (reboot nodig)</string>
     <string name="navbar_head">Activeer navbar</string>
     <string name="navbar_off">Navbar gedeactiveerd</string>

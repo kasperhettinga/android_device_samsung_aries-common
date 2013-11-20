@@ -143,31 +143,6 @@
 	</PreferenceCategory>
 
 	<PreferenceCategory
-                android:title="@string/category_performance_title"
-                android:key="category_performance">
-                <!-- Processor Settings -->
-                <PreferenceScreen
-                android:key="processor_settings"
-                android:title="@string/processor_settings_title"
-                android:summary="@string/processor_settings_summary">
-                <intent
-                    android:action="android.intent.action.MAIN"
-                    android:targetPackage="com.android.settings"
-                    android:targetClass="com.android.settings.Settings$ProcessorSettings" />
-                </PreferenceScreen>
-                <!-- Scheduler -->
-                <PreferenceScreen
-                android:key="scheduler_settings"
-                android:title="@string/scheduler_settings_title"
-                android:summary="@string/scheduler_settings_summary">
-                <intent
-                    android:action="android.intent.action.MAIN"
-                    android:targetPackage="com.android.settings"
-                    android:targetClass="com.android.settings.Settings$IOScheduler" />
-                </PreferenceScreen>
-	</PreferenceCategory>
-
-	<PreferenceCategory
             android:title="@string/category_navigation_title"
                 android:key="category_navigation">
 	        <!-- Navbar setting -->
