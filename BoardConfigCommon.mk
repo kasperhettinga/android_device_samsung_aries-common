@@ -40,6 +40,9 @@ TARGET_PROVIDES_INIT := true
 TARGET_BOARD_PLATFORM := s5pc110
 TARGET_BOOTLOADER_BOARD_NAME := aries
 
+#Disable CMUpdater to be build
+DISABLE_OTA := true
+
 BOARD_MOBILEDATA_INTERFACE_NAME = "pdp0"
 
 # Kernel Source
