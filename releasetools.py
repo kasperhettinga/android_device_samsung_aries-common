@@ -68,6 +68,7 @@ def FullOTA_Assertions(info):
          'mount("ext4", "EMMC", "/dev/lvpool/userdata", "/data");\n'
          'delete("/data/local/mackay/blnactive");\n'
          'delete("/data/local/mackay/navbaractive");\n'
+         'delete("/data/local/mackay/lowramactive");\n'
          'unmount("/data");'))
 
 def FullOTA_InstallEnd(info):

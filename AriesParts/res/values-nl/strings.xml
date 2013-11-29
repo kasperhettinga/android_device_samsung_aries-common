@@ -85,6 +85,10 @@
     <string name="navbar_head">Activeer navbar</string>
     <string name="navbar_off">Navbar gedeactiveerd</string>
     <string name="navbar_on">Navbar geactiveerd</string>
+    <string name="category_ram_title">RAM instellingen (reboot nodig)</string>
+    <string name="lowram_head">Activeer laag RAM instellingen, wat een aantal grafische opties uitschakeld voor een snellere gebruikservaring</string>
+    <string name="lowram_off">Laag RAM gedeactiveerd</string>
+    <string name="lowram_on">Laag RAM geactiveerd</string>
     <string name="category_touchwake_title">Touchwake</string>
     <string name="touchwakeactive_head">Activeer touchwake</string>
     <string name="touchwakeactive_off">Touchwake gedeactiveerd</string>
