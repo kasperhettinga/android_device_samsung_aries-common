@@ -36,3 +36,4 @@
 /sys/class/misc/dockaudio/(.*)_enable               u:object_r:sysfs_writable:s0
 /sys/devices/virtual/misc/color_tuning/(.*)         u:object_r:sysfs_writable:s0
 /sys/devices/virtual/misc/voodoo_sound/(.*)         u:object_r:sysfs_writable:s0
+/cache/dalvik-cache(/.*)?                           u:object_r:dalvikcache_data_file:s0
