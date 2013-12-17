@@ -1,4 +1,4 @@
-package com.cyanogenmod.settings.device;
+package org.omnirom.omnigears.device;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -7,12 +7,12 @@ import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceManager;
 
-public class Led implements OnPreferenceChangeListener {
+public class TouchWake implements OnPreferenceChangeListener {
 
     /**
-     * Set location of Led parameter
+     * Set location of TouchWake activity parameter
      */
-    private static final String FILE_PATH = "/data/local/mackay/bln";
+    private static final String FILE_PATH = "/sys/devices/virtual/misc/touchwake/enabled";
 
     /**
      * Check whether the kernel supports this specific parameter
@@ -34,7 +34,7 @@ public class Led implements OnPreferenceChangeListener {
         }
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-        int value = sharedPrefs.getBoolean(DeviceSettings.KEY_BLN, false) ? 1 : 0;
+        int value = sharedPrefs.getBoolean(DeviceSettings.KEY_TOUCHWAKEACTIVE, false) ? 1 : 0;
         Utils.writeValue(FILE_PATH, String.valueOf(value));
 
     }

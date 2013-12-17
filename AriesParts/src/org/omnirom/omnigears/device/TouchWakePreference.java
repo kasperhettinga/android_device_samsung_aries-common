@@ -1,4 +1,4 @@
-package com.cyanogenmod.settings.device;
+package org.omnirom.omnigears.device;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -11,6 +11,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
+import android.R;
 
 public class TouchWakePreference extends DialogPreference implements OnClickListener {
 
