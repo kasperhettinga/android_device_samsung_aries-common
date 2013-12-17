@@ -256,16 +256,6 @@ service geomagneticd /system/vendor/bin/geomagneticd
     user compass
     group system input
 
-service tvout /system/bin/tvoutserver
-    class late_start
-    user system
-    group graphics
-
-service tvouthack /system/bin/tvouthack
-    user system
-    group graphics
-    disabled
-
 # fusewrapped external sdcard daemon running as media_rw (1023)
 service fuse_sdcard0 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard0 /storage/sdcard0
     class late_start
