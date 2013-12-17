@@ -1,9 +1,8 @@
-package org.omnirom.omnigears.device;
+package com.cyanogenmod.settings.device;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import android.os.Vibrator;
 import android.preference.DialogPreference;
 import android.preference.PreferenceManager;
 import android.util.AttributeSet;
@@ -13,17 +12,15 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import android.R;
+public class BLXPreference extends DialogPreference implements OnClickListener {
 
-public class VibrationPreference extends DialogPreference implements OnClickListener {
+    private static final int SEEKBAR_ID = R.id.blx_seekbar;
 
-    private static final int SEEKBAR_ID = R.id.vibration_seekbar;
+    private static final int VALUE_DISPLAY_ID = R.id.blx_value;
 
-    private static final int VALUE_DISPLAY_ID = R.id.vibration_value;
+    private static final String FILE_PATH = "/sys/class/misc/batterylifeextender/charging_limit";
 
-    private static final String FILE_PATH = "/sys/class/misc/pwm_duty/pwm_duty";
-
-    private VibrationSeekBar mSeekBar = new VibrationSeekBar();
+    private BLXSeekBar mSeekBar = new BLXSeekBar();
 
     private static final int MAX_VALUE = 100;
 
@@ -31,10 +28,10 @@ public class VibrationPreference extends DialogPreference implements OnClickList
     // (when the orientation changes, a new dialog is created before the old one is destroyed)
     private static int sInstances = 0;
 
-    public VibrationPreference(Context context, AttributeSet attrs) {
+    public BLXPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        setDialogLayoutResource(R.layout.preference_dialog_vibration);
+        setDialogLayoutResource(R.layout.preference_dialog_blx);
     }
 
     @Override
@@ -45,16 +42,13 @@ public class VibrationPreference extends DialogPreference implements OnClickList
 
         SeekBar seekBar = (SeekBar) view.findViewById(SEEKBAR_ID);
         TextView valueDisplay = (TextView) view.findViewById(VALUE_DISPLAY_ID);
-        mSeekBar = new VibrationSeekBar(seekBar, valueDisplay, FILE_PATH);
+        mSeekBar = new BLXSeekBar(seekBar, valueDisplay, FILE_PATH);
 
         SetupButtonClickListener(view);
     }
 
     private void SetupButtonClickListener(View view) {
-        Button mTestButton = (Button)view.findViewById(R.id.vibration_test);
-        mTestButton.setOnClickListener(this);
-
-        Button mResetButton = (Button)view.findViewById(R.id.vibration_reset);
+        Button mResetButton = (Button)view.findViewById(R.id.blx_reset);
         mResetButton.setOnClickListener(this);
     }
 
@@ -90,14 +84,14 @@ public class VibrationPreference extends DialogPreference implements OnClickList
         return supported;
     }
 
-    class VibrationSeekBar implements SeekBar.OnSeekBarChangeListener {
+    class BLXSeekBar implements SeekBar.OnSeekBarChangeListener {
 
         protected String mFilePath;
         protected int mOriginal;
         protected SeekBar mSeekBar;
         protected TextView mValueDisplay;
 
-        public VibrationSeekBar(SeekBar seekBar, TextView valueDisplay, String filePath) {
+        public BLXSeekBar(SeekBar seekBar, TextView valueDisplay, String filePath) {
             mSeekBar = seekBar;
             mValueDisplay = valueDisplay;
             mFilePath = filePath;
@@ -112,7 +106,7 @@ public class VibrationPreference extends DialogPreference implements OnClickList
         }
 
         // For inheriting class
-        protected VibrationSeekBar() {
+        protected BLXSeekBar() {
         }
 
         public void reset() {
@@ -156,18 +150,9 @@ public class VibrationPreference extends DialogPreference implements OnClickList
 
     public void onClick(View v) {
         switch(v.getId()) {
-            case R.id.vibration_test:
-                testVibration();
-                break;
-            case R.id.vibration_reset:
+            case R.id.blx_reset:
                 mSeekBar.resetDefault();
                 break;
         }
     }
-
-    public void testVibration() {
-        Vibrator vib = (Vibrator) this.getContext().getSystemService(Context.VIBRATOR_SERVICE);
-        vib.vibrate(1000);
-    }
-
 }

@@ -1,4 +1,4 @@
-package org.omnirom.omnigears.device;
+package com.cyanogenmod.settings.device;
 
 import java.io.File;
 import java.io.FileNotFoundException;
