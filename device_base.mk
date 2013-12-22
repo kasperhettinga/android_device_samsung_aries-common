@@ -104,7 +104,8 @@ PRODUCT_PACKAGES += \
 	libs3cjpeg
 
 PRODUCT_COPY_FILES += \
-	device/samsung/aries-common/libaudio/audio_policy.conf:system/etc/audio_policy.conf
+	device/samsung/aries-common/libaudio/audio_policy.conf:system/etc/audio_policy.conf \
+        device/samsung/aries-common/libaudio/audio_effects.conf:system/vendor/etc/audio_effects.conf
 
 # Libs
 PRODUCT_PACKAGES += \
@@ -160,7 +161,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
        mobiledata.interfaces=pdp0,eth0,gprs,ppp0 \
        ro.vold.switchablepair=/mnt/emmc,/mnt/sdcard \
        ro.bq.gpu_to_cpu_unsupported=1 \
-       ro.config.low_ram=false \
+       ro.config.low_ram=false
+
+PRODUCT_PACKAGES += \
+    libnetcmdiface
 
 # SGX540 is slower with the scissor optimization enabled
 PRODUCT_PROPERTY_OVERRIDES += \
