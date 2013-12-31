@@ -1,4 +1,4 @@
-package com.cyanogenmod.settings.device;
+package org.omnirom.device;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -6,9 +6,9 @@ import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceManager;
 
-public class Mdnie implements OnPreferenceChangeListener {
+public class TouchKeyBacklightTimeout implements OnPreferenceChangeListener {
 
-    private static final String FILE = "/sys/class/mdnieset_ui/switch_mdnieset_ui/mdnieset_ui_file_cmd";
+    private static final String FILE = "/sys/class/misc/notification/bl_timeout";
 
     public static boolean isSupported() {
         return Utils.fileExists(FILE);
@@ -24,7 +24,7 @@ public class Mdnie implements OnPreferenceChangeListener {
         }
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-        Utils.writeValue(FILE, sharedPrefs.getString(DeviceSettings.KEY_MDNIE, "6"));
+        Utils.writeValue(FILE, sharedPrefs.getString(DeviceSettings.KEY_BACKLIGHT_TIMEOUT, "1600"));
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.cyanogenmod.settings.device;
+package org.omnirom.device;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

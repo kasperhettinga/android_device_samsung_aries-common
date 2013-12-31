@@ -1,4 +1,4 @@
-package com.cyanogenmod.settings.device;
+package org.omnirom.device;
 
 import android.os.Bundle;
 import android.content.Intent;
@@ -8,6 +8,8 @@ import android.app.AlertDialog;
 import android.view.Window;
 import android.content.DialogInterface;
 import android.util.Log;
+
+import org.omnirom.device.R;
 
 public class WarnActivity extends Activity {
     public static final String KEY_REASON = "sanity_reason";

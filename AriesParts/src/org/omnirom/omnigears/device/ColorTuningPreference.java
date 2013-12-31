@@ -1,4 +1,4 @@
-package com.cyanogenmod.settings.device;
+package org.omnirom.device;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -11,6 +11,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
+import org.omnirom.device.R;
 
 /**
  * Special preference type that allows configuration of both the ring volume and

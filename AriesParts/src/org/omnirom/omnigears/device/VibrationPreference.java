@@ -1,8 +1,9 @@
-package com.cyanogenmod.settings.device;
+package org.omnirom.device;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.os.Vibrator;
 import android.preference.DialogPreference;
 import android.preference.PreferenceManager;
 import android.util.AttributeSet;
@@ -12,26 +13,28 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-public class TouchWakePreference extends DialogPreference implements OnClickListener {
+import org.omnirom.device.R;
 
-    private static final int SEEKBAR_ID = R.id.touchwakedelay_seekbar;
+public class VibrationPreference extends DialogPreference implements OnClickListener {
 
-    private static final int VALUE_DISPLAY_ID = R.id.touchwakedelay_value;
+    private static final int SEEKBAR_ID = R.id.vibration_seekbar;
 
-    private static final String FILE_PATH = "/sys/devices/virtual/misc/touchwake/delay";
+    private static final int VALUE_DISPLAY_ID = R.id.vibration_value;
 
-    private TouchWakeSeekBar mSeekBar = new TouchWakeSeekBar();
+    private static final String FILE_PATH = "/sys/class/misc/pwm_duty/pwm_duty";
 
-    private static final int MAX_VALUE = 90000;
+    private VibrationSeekBar mSeekBar = new VibrationSeekBar();
+
+    private static final int MAX_VALUE = 100;
 
     // Track instances to know when to restore original value
     // (when the orientation changes, a new dialog is created before the old one is destroyed)
     private static int sInstances = 0;
 
-    public TouchWakePreference(Context context, AttributeSet attrs) {
+    public VibrationPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        setDialogLayoutResource(R.layout.preference_dialog_touchwakedelay);
+        setDialogLayoutResource(R.layout.preference_dialog_vibration);
     }
 
     @Override
@@ -42,13 +45,16 @@ public class TouchWakePreference extends DialogPreference implements OnClickList
 
         SeekBar seekBar = (SeekBar) view.findViewById(SEEKBAR_ID);
         TextView valueDisplay = (TextView) view.findViewById(VALUE_DISPLAY_ID);
-        mSeekBar = new TouchWakeSeekBar(seekBar, valueDisplay, FILE_PATH);
+        mSeekBar = new VibrationSeekBar(seekBar, valueDisplay, FILE_PATH);
 
         SetupButtonClickListener(view);
     }
 
     private void SetupButtonClickListener(View view) {
-        Button mResetButton = (Button)view.findViewById(R.id.touchwakedelay_reset);
+        Button mTestButton = (Button)view.findViewById(R.id.vibration_test);
+        mTestButton.setOnClickListener(this);
+
+        Button mResetButton = (Button)view.findViewById(R.id.vibration_reset);
         mResetButton.setOnClickListener(this);
     }
 
@@ -84,14 +90,14 @@ public class TouchWakePreference extends DialogPreference implements OnClickList
         return supported;
     }
 
-    class TouchWakeSeekBar implements SeekBar.OnSeekBarChangeListener {
+    class VibrationSeekBar implements SeekBar.OnSeekBarChangeListener {
 
         protected String mFilePath;
         protected int mOriginal;
         protected SeekBar mSeekBar;
         protected TextView mValueDisplay;
 
-        public TouchWakeSeekBar(SeekBar seekBar, TextView valueDisplay, String filePath) {
+        public VibrationSeekBar(SeekBar seekBar, TextView valueDisplay, String filePath) {
             mSeekBar = seekBar;
             mValueDisplay = valueDisplay;
             mFilePath = filePath;
@@ -106,7 +112,7 @@ public class TouchWakePreference extends DialogPreference implements OnClickList
         }
 
         // For inheriting class
-        protected TouchWakeSeekBar() {
+        protected VibrationSeekBar() {
         }
 
         public void reset() {
@@ -138,7 +144,7 @@ public class TouchWakePreference extends DialogPreference implements OnClickList
         }
 
         protected void updateValue(int progress) {
-            mValueDisplay.setText(String.valueOf(progress));
+            mValueDisplay.setText(String.valueOf(progress) + "%");
         }
 
         public void resetDefault() {
@@ -150,9 +156,18 @@ public class TouchWakePreference extends DialogPreference implements OnClickList
 
     public void onClick(View v) {
         switch(v.getId()) {
-            case R.id.touchwakedelay_reset:
+            case R.id.vibration_test:
+                testVibration();
+                break;
+            case R.id.vibration_reset:
                 mSeekBar.resetDefault();
                 break;
         }
     }
+
+    public void testVibration() {
+        Vibrator vib = (Vibrator) this.getContext().getSystemService(Context.VIBRATOR_SERVICE);
+        vib.vibrate(1000);
+    }
+
 }

@@ -14,7 +14,7 @@
 	<PreferenceCategory
     	android:title="@string/category_screen_title">
 	    <!-- Color tuning -->
-	    <com.cyanogenmod.settings.device.ColorTuningPreference 
+	    <org.omnirom.device.ColorTuningPreference 
 	        android:key="color_tuning"
 	        android:title="@string/color_tuning_title_head"
 	        android:summary="@string/color_tuning_summary_head" />
@@ -70,7 +70,7 @@
             android:title="@string/category_volume_boost_title"
             android:key="category_volume_boost">
                 <!-- Volume Boost -->
-                <com.cyanogenmod.settings.device.VolumeBoostPreference
+                <org.omnirom.device.VolumeBoostPreference
                 android:key="volume_boost"
                 android:title="@string/volume_boost_title_head"
                 android:summary="@string/volume_boost_summary_head" />
@@ -97,7 +97,7 @@
         <PreferenceCategory
             android:title="@string/category_vibration_title">
             <!-- Vibration -->
-            <com.cyanogenmod.settings.device.VibrationPreference
+            <org.omnirom.device.VibrationPreference
                 android:key="vibration"
                 android:title="@string/vibration_title_head"
                 android:summary="@string/vibration_summary_head" />
@@ -117,7 +117,7 @@
 	<PreferenceCategory
                 android:title="@string/category_blx_preference_title"
                 android:key="category_blx_preference">
-	        <com.cyanogenmod.settings.device.BLXPreference 
+	        <org.omnirom.device.BLXPreference 
 	                android:key="blx"
 	                android:title="@string/blx_title_head"
 	                android:summary="@string/blx_summary_head" />
@@ -157,7 +157,7 @@
 			android:summaryOn="@string/touchwakeactive_on"
 			android:summaryOff="@string/touchwakeactive_off"
                 android:persistent="true" />
-	        <com.cyanogenmod.settings.device.TouchWakePreference
+	        <org.omnirom.device.TouchWakePreference
 	                android:key="touchwakedelay"
 	                android:title="@string/touchwakedelay_title_head"
 	                android:summary="@string/touchwakedelay_summary_head" />

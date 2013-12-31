@@ -1,4 +1,4 @@
-package com.cyanogenmod.settings.device;
+package org.omnirom.device;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -12,26 +12,28 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-public class BLXPreference extends DialogPreference implements OnClickListener {
+import org.omnirom.device.R;
 
-    private static final int SEEKBAR_ID = R.id.blx_seekbar;
+public class TouchWakePreference extends DialogPreference implements OnClickListener {
 
-    private static final int VALUE_DISPLAY_ID = R.id.blx_value;
+    private static final int SEEKBAR_ID = R.id.touchwakedelay_seekbar;
 
-    private static final String FILE_PATH = "/sys/class/misc/batterylifeextender/charging_limit";
+    private static final int VALUE_DISPLAY_ID = R.id.touchwakedelay_value;
 
-    private BLXSeekBar mSeekBar = new BLXSeekBar();
+    private static final String FILE_PATH = "/sys/devices/virtual/misc/touchwake/delay";
 
-    private static final int MAX_VALUE = 100;
+    private TouchWakeSeekBar mSeekBar = new TouchWakeSeekBar();
+
+    private static final int MAX_VALUE = 90000;
 
     // Track instances to know when to restore original value
     // (when the orientation changes, a new dialog is created before the old one is destroyed)
     private static int sInstances = 0;
 
-    public BLXPreference(Context context, AttributeSet attrs) {
+    public TouchWakePreference(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        setDialogLayoutResource(R.layout.preference_dialog_blx);
+        setDialogLayoutResource(R.layout.preference_dialog_touchwakedelay);
     }
 
     @Override
@@ -42,13 +44,13 @@ public class BLXPreference extends DialogPreference implements OnClickListener {
 
         SeekBar seekBar = (SeekBar) view.findViewById(SEEKBAR_ID);
         TextView valueDisplay = (TextView) view.findViewById(VALUE_DISPLAY_ID);
-        mSeekBar = new BLXSeekBar(seekBar, valueDisplay, FILE_PATH);
+        mSeekBar = new TouchWakeSeekBar(seekBar, valueDisplay, FILE_PATH);
 
         SetupButtonClickListener(view);
     }
 
     private void SetupButtonClickListener(View view) {
-        Button mResetButton = (Button)view.findViewById(R.id.blx_reset);
+        Button mResetButton = (Button)view.findViewById(R.id.touchwakedelay_reset);
         mResetButton.setOnClickListener(this);
     }
 
@@ -84,14 +86,14 @@ public class BLXPreference extends DialogPreference implements OnClickListener {
         return supported;
     }
 
-    class BLXSeekBar implements SeekBar.OnSeekBarChangeListener {
+    class TouchWakeSeekBar implements SeekBar.OnSeekBarChangeListener {
 
         protected String mFilePath;
         protected int mOriginal;
         protected SeekBar mSeekBar;
         protected TextView mValueDisplay;
 
-        public BLXSeekBar(SeekBar seekBar, TextView valueDisplay, String filePath) {
+        public TouchWakeSeekBar(SeekBar seekBar, TextView valueDisplay, String filePath) {
             mSeekBar = seekBar;
             mValueDisplay = valueDisplay;
             mFilePath = filePath;
@@ -106,7 +108,7 @@ public class BLXPreference extends DialogPreference implements OnClickListener {
         }
 
         // For inheriting class
-        protected BLXSeekBar() {
+        protected TouchWakeSeekBar() {
         }
 
         public void reset() {
@@ -138,7 +140,7 @@ public class BLXPreference extends DialogPreference implements OnClickListener {
         }
 
         protected void updateValue(int progress) {
-            mValueDisplay.setText(String.valueOf(progress) + "%");
+            mValueDisplay.setText(String.valueOf(progress));
         }
 
         public void resetDefault() {
@@ -150,7 +152,7 @@ public class BLXPreference extends DialogPreference implements OnClickListener {
 
     public void onClick(View v) {
         switch(v.getId()) {
-            case R.id.blx_reset:
+            case R.id.touchwakedelay_reset:
                 mSeekBar.resetDefault();
                 break;
         }
