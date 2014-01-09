@@ -49,7 +49,7 @@ BOARD_MOBILEDATA_INTERFACE_NAME = "pdp0"
 TARGET_KERNEL_SOURCE := kernel/samsung/aries
 
 # Build kernel using Linaro 4.7 toolchain
-# TARGET_KERNEL_CUSTOM_TOOLCHAIN := a8linaro-4.7.4
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := a8linaro-4.7.4
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/aries-common
