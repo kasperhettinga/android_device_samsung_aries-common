@@ -40,16 +40,10 @@ TARGET_PROVIDES_INIT := true
 TARGET_BOARD_PLATFORM := s5pc110
 TARGET_BOOTLOADER_BOARD_NAME := aries
 
-#Disable CMUpdater to be build
-DISABLE_OTA := true
-
 BOARD_MOBILEDATA_INTERFACE_NAME = "pdp0"
 
 # Kernel Source
 TARGET_KERNEL_SOURCE := kernel/samsung/aries
-
-# Build kernel using Linaro 4.7 toolchain
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := a8linaro-4.7.4
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/aries-common
@@ -73,7 +67,7 @@ BOARD_NAND_PAGE_SIZE := 4096
 BOARD_NAND_SPARE_SIZE := 128
 BOARD_KERNEL_BASE := 0x32000000
 BOARD_KERNEL_PAGESIZE := 4096
-BOARD_KERNEL_CMDLINE := console=ttyFIQ0,115200 init=/init no_console_suspend
+BOARD_KERNEL_CMDLINE := console=ttyFIQ0,115200 androidboot.selinux=permissive init=/init no_console_suspend
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 7864320
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 419430400
@@ -148,8 +142,10 @@ BOARD_SEPOLICY_DIRS := \
 
 BOARD_SEPOLICY_UNION := \
     bdaddr_read.te \
+    device.te \
     file_contexts \
     geomagneticd.te \
+    mediaserver.te \
     orientationd.te \
     property_contexts \
     pvrsrvinit.te \
@@ -160,6 +156,8 @@ BOARD_SEPOLICY_UNION := \
     installd.te \
     vold.te \
     mac_permissions.xml
+#    tvouthack.te \
+#    tvoutserver.te \
 
 # Include aries specific stuff
 -include device/samsung/aries-common/Android.mk
@@ -178,3 +176,5 @@ TW_FLASH_FROM_STORAGE := true
 TW_EXCLUDE_SUPERSU := true
 TW_NO_PARTITION_SD_CARD := true
 TW_NO_EXFAT_FUSE := true
+TW_INCLUDE_FB2PNG := true
+

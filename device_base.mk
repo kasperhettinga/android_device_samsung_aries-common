@@ -109,7 +109,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
 	device/samsung/aries-common/libaudio/audio_policy.conf:system/etc/audio_policy.conf \
-        device/samsung/aries-common/libaudio/audio_effects.conf:system/vendor/etc/audio_effects.conf
+	device/samsung/aries-common/libaudio/audio_effects.conf:system/vendor/etc/audio_effects.conf
 
 # Libs
 PRODUCT_PACKAGES += \
@@ -161,6 +161,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
        wifi.interface=wlan0 \
        ro.telephony.ril_class=SamsungExynos3RIL \
+       ro.telephony.ril.v3=icccardstatus,datacall,signalstrength,facilitylock \
        mobiledata.interfaces=pdp0,eth0,gprs,ppp0 \
        ro.vold.switchablepair=/mnt/external_sd,/mnt/sdcard \
        ro.bq.gpu_to_cpu_unsupported=1 \
@@ -194,15 +195,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vold.umsdirtyratio=20
 
-# The following are not needed for some devices
-ifneq ($(VARIANT_MODEL), SCH-I500)
-PRODUCT_PROPERTY_OVERRIDES += \
-       ro.telephony.ril.v3=icccardstatus,datacall,signalstrength,facilitylock
-
 # We have sacrificed /cache for a larger /system, so it's not large enough for dalvik cache
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dexopt-data-only=1
-endif
 
 # Set default USB interface and default to internal SD as /sdcard
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
