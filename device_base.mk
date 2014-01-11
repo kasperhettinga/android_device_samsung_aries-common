@@ -63,6 +63,10 @@ PRODUCT_COPY_FILES += \
 	device/samsung/aries-common/sec_jack.kl:system/usr/keylayout/sec_jack.kl \
 	device/samsung/aries-common/s3c-keypad.kl:system/usr/keylayout/s3c-keypad.kl
 
+# Prebuilt init.d
+PRODUCT_COPY_FILES += \
+	device/samsung/aries-common/prebuilt/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
+
 # Generated kcm keymaps
 PRODUCT_PACKAGES := \
        cypress-touchkey.kcm \
@@ -158,8 +162,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
        wifi.interface=wlan0 \
        ro.telephony.ril_class=SamsungExynos3RIL \
        mobiledata.interfaces=pdp0,eth0,gprs,ppp0 \
+       ro.vold.switchablepair=/mnt/external_sd,/mnt/sdcard \
        ro.bq.gpu_to_cpu_unsupported=1 \
-       ro.config.low_ram=false
+       ro.config.low_ram=false \
+       ro.ril.hsxpa=1 \
+       ro.ril.gprsclass=10 \
+       ro.adb.qemud=1
 
 PRODUCT_PACKAGES += \
     libnetcmdiface

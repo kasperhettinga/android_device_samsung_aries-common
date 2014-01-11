@@ -137,23 +137,29 @@ BOARD_CUSTOM_VSYNC_IOCTL := true
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
 # Required for TV out
-COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
+# COMMON_GLOBAL_CFLAGS := -DNEEDS_VECTORIMPL_SYMBOLS
 
 # Screenrecord
 BOARD_SCREENRECORD_LANDSCAPE_ONLY := true
 
 # SELinux
-BOARD_SEPOLICY_DIRS += \
+BOARD_SEPOLICY_DIRS := \
     device/samsung/aries-common/sepolicy
 
-BOARD_SEPOLICY_UNION += \
+BOARD_SEPOLICY_UNION := \
     bdaddr_read.te \
     file_contexts \
     geomagneticd.te \
     orientationd.te \
     property_contexts \
     pvrsrvinit.te \
-    rild.te
+    rild.te \
+    file.te \
+    fs_use \
+    genfs_contexts \
+    installd.te \
+    vold.te \
+    mac_permissions.xml
 
 # Include aries specific stuff
 -include device/samsung/aries-common/Android.mk
@@ -161,11 +167,13 @@ BOARD_SEPOLICY_UNION += \
 #TWRP Flags
 HAVE_SELINUX := true
 DEVICE_RESOLUTION := 480x800
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+HAVE_SELINUX := true
 TW_NO_REBOOT_BOOTLOADER := true
 TW_INTERNAL_STORAGE_PATH := "/sdcard"
 TW_INTERNAL_STORAGE_MOUNT_POINT := "sdcard"
-TW_EXTERNAL_STORAGE_PATH := "/emmc"
-TW_EXTERNAL_STORAGE_MOUNT_POINT := "emmc"
+TW_EXTERNAL_STORAGE_PATH := "/external_sd"
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
 TW_FLASH_FROM_STORAGE := true
 TW_EXCLUDE_SUPERSU := true
 TW_NO_PARTITION_SD_CARD := true
