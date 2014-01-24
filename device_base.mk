@@ -172,7 +172,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.ril.emc.mode=2 \
     ro.phone_storage=1 \
     ro.additionalmounts=/storage/sdcard1 \
-    ro.config.low_ram=false \
 
 PRODUCT_PACKAGES += \
     libnetcmdiface

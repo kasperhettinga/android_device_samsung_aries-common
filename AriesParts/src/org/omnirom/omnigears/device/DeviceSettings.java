@@ -34,8 +34,6 @@ public class DeviceSettings extends PreferenceActivity  {
     public static final String KEY_BLX = "blx";
     public static final String KEY_NAVIGATION_CATEGORY = "category_navigation";
     public static final String KEY_NAVBAR = "navbar";
-    public static final String KEY_RAM_CATEGORY = "category_ram";
-    public static final String KEY_LOWRAM = "lowram";
     public static final String KEY_TOUCHWAKE_CATEGORY = "category_touchwake";
     public static final String KEY_TOUCHWAKEACTIVE = "touchwakeactive";
     public static final String KEY_TOUCHWAKEDELAY = "touchwakedelay";
@@ -53,7 +51,6 @@ public class DeviceSettings extends PreferenceActivity  {
     private CheckBoxPreference mWifiSpeed;
     private BLXPreference mBLX;
     private CheckBoxPreference mNavbar;
-    private CheckBoxPreference mLowram;
     private CheckBoxPreference mTouchWakeActive;
     private TouchWakePreference mTouchWakeDelay;
     private CheckBoxPreference mApply;
@@ -145,15 +142,6 @@ public class DeviceSettings extends PreferenceActivity  {
         } else {
             PreferenceCategory category = (PreferenceCategory) getPreferenceScreen().findPreference(KEY_NAVIGATION_CATEGORY);
             category.removePreference(mNavbar);
-            getPreferenceScreen().removePreference(category);
-        }
-
-        mLowram = (CheckBoxPreference) findPreference(KEY_LOWRAM);
-        if (Ram.isSupported()) {
-            mLowram.setOnPreferenceChangeListener(new Ram());
-        } else {
-            PreferenceCategory category = (PreferenceCategory) getPreferenceScreen().findPreference(KEY_RAM_CATEGORY);
-            category.removePreference(mLowram);
             getPreferenceScreen().removePreference(category);
         }
 

@@ -136,18 +136,6 @@
 	</PreferenceCategory>
 
 	<PreferenceCategory
-		android:title="@string/category_ram_title"
-		android:key="category_ram">
-		<!-- RAM setting -->
-		<CheckBoxPreference
-			android:key="lowram"
-			android:title="@string/lowram_head"
-			android:summaryOn="@string/lowram_on"
-			android:summaryOff="@string/lowram_off"
-			android:persistent="true" />
-	</PreferenceCategory>
-
-	<PreferenceCategory
             android:title="@string/category_touchwake_title"
                 android:key="category_touchwake">
                 <!-- Touchwake active -->

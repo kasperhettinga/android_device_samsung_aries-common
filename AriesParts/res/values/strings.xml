@@ -85,11 +85,6 @@
     <string name="navbar_off">Navbar not activated</string>
     <string name="navbar_on">Navbar activated</string>
 
-    <string name="category_ram_title">RAM settings (reboot required)</string>
-    <string name="lowram_head">Activate low RAM settings, which will disable some graphical options to increase overall system smoothness</string>
-    <string name="lowram_off">Low RAM not activated</string>
-    <string name="lowram_on">Low RAM activated</string>
-
     <string name="category_touchwake_title">Touchwake</string>
     <string name="touchwakeactive_head">Activate touchwake</string>
     <string name="touchwakeactive_off">Touchwake not activated</string>
