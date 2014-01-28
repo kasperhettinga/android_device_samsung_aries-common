@@ -159,7 +159,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
        ro.telephony.ril_class=SamsungExynos3RIL \
        mobiledata.interfaces=pdp0,eth0,gprs,ppp0 \
        ro.bq.gpu_to_cpu_unsupported=1 \
-       ro.config.low_ram=false
+       ro.config.low_ram=false \
+       ro.ksm.default=1 \
 
 # SGX540 is slower with the scissor optimization enabled
 PRODUCT_PROPERTY_OVERRIDES += \
