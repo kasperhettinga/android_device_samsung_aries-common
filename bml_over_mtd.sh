@@ -11,10 +11,11 @@ RESERVOIR_START_BLOCK=$4
 IMAGE=$5
 
 # remove old log
-rm -rf /sdcard/bml_over_mtd.log
+rm -rf /tmp/mackay/bml_over_mtd.log
 
-# everything is logged into /sdcard/bml_over_mtd.log
-exec >> /sdcard/bml_over_mtd.log 2>&1
+# everything is logged into /tmp/mackay/bml_over_mtd.log
+mkdir -p /tmp/mackay
+exec >> /tmp/mackay/bml_over_mtd.log 2>&1
 
 set -x
 export PATH=/:/sbin:/system/xbin:/system/bin:$PATH

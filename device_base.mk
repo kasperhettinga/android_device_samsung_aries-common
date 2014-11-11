@@ -160,7 +160,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
        mobiledata.interfaces=pdp0,eth0,gprs,ppp0 \
        ro.bq.gpu_to_cpu_unsupported=1 \
        ro.config.low_ram=false \
-       ro.ksm.default=1 \
 
 # SGX540 is slower with the scissor optimization enabled
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -196,8 +195,7 @@ endif
 
 # Set default USB interface and default to internal SD as /sdcard
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mass_storage \
-    persist.sys.vold.switchexternal=1
+    persist.sys.usb.config=mtp
 
 include frameworks/native/build/phone-hdpi-512-dalvik-heap.mk
 
